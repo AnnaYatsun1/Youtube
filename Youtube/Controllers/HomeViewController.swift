@@ -24,6 +24,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     public var videoManager = VideoNetworkService()
     
     private let model = ArrayModel(values: [Video]())
+ 
     
 
     // MARK:
@@ -40,9 +41,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         }        
    
         let titleLable = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        titleLable.textColor = UIColor.white
-        titleLable.text = "Home"
-        titleLable.font = UIFont.systemFont(ofSize: 20)
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = .white
         
         self.navigationItem.title = "Home"
         self.navigationItem.titleView = titleLable

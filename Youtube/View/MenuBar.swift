@@ -35,6 +35,8 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     private let imageNames = ["home", "person", "youtube", "fire"]
     private let horizontalView = UIView()
     
+    private lazy var horizontalBarWidth = self.frame.width / 4 
+    
     //MARK: -
     //MARK: Initializations
     
@@ -89,15 +91,9 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
-        var pointer =  CGFloat(indexPath.item) * self.frame.width / 4
-
-        print(pointer)
-        self.horizontalView.snp.makeConstraints { (maker) in
-             maker.left.equalToSuperview().offset(pointer)
-        }
-        
-        self.layoutIfNeeded()
+        UIView.animate(withDuration: 0.75){
+            self.horizontalView.frame.origin.x = CGFloat(indexPath.item) * self.horizontalBarWidth
+        } 
     }
     
     private func setupHorizontalBar() {
