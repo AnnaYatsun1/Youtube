@@ -52,4 +52,9 @@ class SettingsLauncherCell: BaseCell {
             maker.top.bottom.equalToSuperview()
         }
     }
+    
+    func fill(setting: Setting) {
+        self.nameLable.text = setting.name
+        self.settingImage.image = UIImage(named: setting.imageName)
+    }
 }

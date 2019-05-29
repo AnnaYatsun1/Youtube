@@ -43,26 +43,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             case .update: self.update()
             }
         }        
-   
-        let titleLable = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = .white
-        
-        self.navigationItem.title = "Home"
-        self.navigationItem.titleView = titleLable
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.hidesBarsOnSwipe = true
-       
-        let collectionView = self.collectionView
-        collectionView?.backgroundColor = UIColor.white        
-        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
-        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
-        collectionView?.register(VideoCell.self, forCellWithReuseIdentifier: "cellId")
-        
+     
         self.setupMenuBer()
         self.setupNavBarButtons()
         self.fetchVideo()
         self.redirectToNewController()
+        self.setupCollectionView()
+        self.setupNavigationItem()
     }
     
     // MARK:
@@ -82,46 +69,64 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     // MARK:
     // MARK: UICollectionViewDelegate & UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.model.count        
+        return 4     
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt cellForItemAtindexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! VideoCell
-        
-        let video = self.model[cellForItemAtindexPath.row]
-        cell.titleLable.text = video.value.title
-        let urlString = video.value.tubnnailImageName 
-        let url = URL(string: urlString)
-        let placeholder = Image(named: "placeholder")
-        cell.thumbnailImageView.kf.setImage(with: url, placeholder: placeholder)
-        
-        let userProfileImage = video.value.channel.profileImageName
-        let urlImageProfile = URL(string: userProfileImage)
-        cell.userProfileImageView.kf.setImage(with: urlImageProfile)
-        
-        let formater = NumberFormatter()
-        formater.numberStyle = .decimal
-        
-        video.value.numberOfViews.do {
-            let string = formater.string(from: NSNumber(integerLiteral: $0))
-            let nill = " "
-            cell.subTitleTixtView.text = video.value.channel.name + nill + string!
-        }
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! UICollectionViewCell
+        cell.backgroundColor = .blue
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = Constants.constatnWidth
-        let height = self.height * 9 / 16 + Constants.constatnWidth
+        return CGSize(width: self.view.frame.width, height: self.view.frame.height)
+    }
+    
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return self.model.count        
+//    }
+//    
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt cellForItemAtindexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! VideoCell
+//        
+//        let video = self.model[cellForItemAtindexPath.row]
+//        cell.titleLable.text = video.value.title
+//        let urlString = video.value.tubnnailImageName 
+//        let url = URL(string: urlString)
+//        let placeholder = Image(named: "placeholder")
+//        cell.thumbnailImageView.kf.setImage(with: url, placeholder: placeholder)
+//        
+//        let userProfileImage = video.value.channel.profileImageName
+//        let urlImageProfile = URL(string: userProfileImage)
+//        cell.userProfileImageView.kf.setImage(with: urlImageProfile)
+//        
+//        let formater = NumberFormatter()
+//        formater.numberStyle = .decimal
+//        
+//        video.value.numberOfViews.do {
+//            let string = formater.string(from: NSNumber(integerLiteral: $0))
+//            let nill = " "
+//            cell.subTitleTixtView.text = video.value.channel.name + nill + string!
+//        }
+//
+//        return cell
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let width = Constants.constatnWidth
+//        let height = self.height * 9 / 16 + width
+//        
+//        return CGSize(width: view.frame.width, height: height + 16 + 68)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0
+//    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.menuBar.horizontalView.frame.origin.x = scrollView.contentOffset.x / 4
+    }
         
-        return CGSize(width: view.frame.width, height: height + 16 + 68)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
     // MARK:
     // MARK:  Private
     
@@ -163,8 +168,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             maker.left.right.equalToSuperview()
             maker.width.height.equalTo(50)
         }
-            
-        self.menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
     }
     
     private func setupNavBarButtons() {
@@ -175,11 +178,56 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         navigationItem.rightBarButtonItems = [moreButton, searchBarButtonItem]
     }
     
+    private func setupCollectionView() {
+        let collectionView = self.collectionView
+        
+        if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 0
+        }
+        
+        collectionView?.backgroundColor = UIColor.white
+        collectionView?.isPagingEnabled = true
+        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
+        collectionView?.register(VideoCell.self, forCellWithReuseIdentifier: "cellId")
+    }
+    
+    private func setupNavigationItem() {
+        let titleLable = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = .white
+        
+        self.navigationItem.title = "Home"
+        self.navigationItem.titleView = titleLable
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.hidesBarsOnSwipe = true
+    }
+     
+    private func scrollMenuIndex(menuIndex: Int) {
+        let indexPath = IndexPath(row: menuIndex, section: 0)
+        collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
     @objc func handlerMore() {
         self.settingsMenu.setupSettingMenu()
     }
     
     @objc func handlerSerch() {
-        print(123)
+        self.menuBar.observer.observer { menuBarStatus, _ in 
+            switch menuBarStatus {
+            case .home:
+               self.scrollMenuIndex(menuIndex: 0)
+            case .person:
+                self.scrollMenuIndex(menuIndex: 1)
+            case .fire:
+                self.scrollMenuIndex(menuIndex: 2)
+            case .youtube:
+                self.scrollMenuIndex(menuIndex: 3)
+            
+            }
+            
+        }
+//        self.scrollMenuIndex(menuIndex: 3)
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher 
 
 class VideoCell: BaseCell {
 
@@ -122,6 +123,28 @@ class VideoCell: BaseCell {
             maker.right.equalTo(thumbnailImageView.snp.right).multipliedBy(1)
             maker.height.equalToSuperview().multipliedBy(0).offset(30)
         }        
+    }
+    
+    func fill(video: Video) {
+        self.titleLable.text = video.title
+        
+        let urlString = video.tubnnailImageName 
+        let url = URL(string: urlString)
+        let placeholder = Image(named: "placeholder")
+        self.thumbnailImageView.kf.setImage(with: url, placeholder: placeholder)
+        
+        let userProfileImage = video.channel.profileImageName
+        let urlImageProfile = URL(string: userProfileImage)
+        self.userProfileImageView.kf.setImage(with: urlImageProfile)
+        
+        let formater = NumberFormatter()
+        formater.numberStyle = .decimal
+        
+        video.numberOfViews.do {
+            let string = formater.string(from: NSNumber(integerLiteral: $0))
+            let nill = " "
+            self.subTitleTixtView.text = video.channel.name + nill + string!
+        }
     }
 }
 

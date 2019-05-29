@@ -34,7 +34,7 @@ class SettingsLauncher: BaseViewControllerObserver, UIGestureRecognizerDelegate,
         ConstantString.switchAccount
     ]
     
-    private let settingsIMG = 
+    private let settingsImage = 
     [
         ConstantString.settings, 
         ConstantString.help, 
@@ -46,7 +46,7 @@ class SettingsLauncher: BaseViewControllerObserver, UIGestureRecognizerDelegate,
     private var layout = UICollectionViewFlowLayout()
     
     private var settings: [Setting] {        
-        return zip(self.settingsname, self.settingsIMG).map { name, image in 
+        return zip(self.settingsname, self.settingsImage).map { name, image in 
             Setting(name: name, imageName: image) 
         }
     }
@@ -123,7 +123,7 @@ class SettingsLauncher: BaseViewControllerObserver, UIGestureRecognizerDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! SettingsLauncherCell
         let settings = self.settings[indexPath.row]
-        cell.nameLable.text = settings.name
+        cell.fill(setting: settings)
         
         return cell
     }

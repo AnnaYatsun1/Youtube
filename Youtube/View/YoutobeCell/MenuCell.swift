@@ -44,5 +44,10 @@ class MenuCell: BaseCell {
             maker.width.height.equalTo(28)
             maker.centerY.centerX.equalToSuperview()
         }
+        
+    }
+    
+    func fill(menuBar: MenuBarModel) {
+        self.imagesView.image = UIImage(named: menuBar.menuBarIcon)?.withRenderingMode(.alwaysTemplate)
     }
 }

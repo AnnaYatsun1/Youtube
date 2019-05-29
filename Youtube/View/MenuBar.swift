@@ -16,10 +16,11 @@ import SnapKit
 //    static let fire = "fire"
 //}
 
-class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout { 
+class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout { 
     
     // MARK:
     // MARK:  Accessors
+    public let horizontalView = UIView()
     
     lazy fileprivate var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -33,8 +34,13 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     private let cellId = "cellId"
     private let imageNames = ["home", "person", "youtube", "fire"]
-    private let horizontalView = UIView()
     
+    private var menuBar: [MenuBarModel] {       
+        return imageNames.map {
+            MenuBarModel(menuBarIcon: $0)
+        }
+    }
+   
     private lazy var horizontalBarWidth = self.frame.width / 4 
     
     //MARK: -
@@ -65,8 +71,9 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId, for: indexPath) as! MenuCell
-        cell.imagesView.image = UIImage(named: imageNames[indexPath.item])?.withRenderingMode(.alwaysTemplate)
-        
+        cell.fill(menuBar: self.menuBar[indexPath.item])
+//        cell.imagesView.image = UIImage(named: imageNames[indexPath.item])?.withRenderingMode(.alwaysTemplate)
+//        
         return cell
     }
     
@@ -92,7 +99,21 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.75){
+            let menuBarItem = self.menuBar[indexPath.item]
+            switch menuBarItem.menuBarIcon {
+            case "home":
+                self.moveToHome()
+            case "person":
+                self.moveToPerson()
+            case "youtube":
+                self.moveToYoutube()
+            case "fire":
+                self.moveToFire()
+            default:
+                break
+            }
             self.horizontalView.frame.origin.x = CGFloat(indexPath.item) * self.horizontalBarWidth
+            
         } 
     }
     
