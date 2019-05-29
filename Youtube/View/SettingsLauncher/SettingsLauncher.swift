@@ -43,7 +43,7 @@ class SettingsLauncher: BaseViewControllerObserver, UIGestureRecognizerDelegate,
         ConstantString.switchAccount
     ]
     
-    private  var layout = UICollectionViewFlowLayout()
+    private var layout = UICollectionViewFlowLayout()
     
     private var settings: [Setting] {        
         return zip(self.settingsname, self.settingsIMG).map { name, image in 

@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Kingfisher 
 
+fileprivate struct Constants {
+    static let constatn:CGFloat = 32
+    static let constatnWidth: CGFloat = 50
+}
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     // MARK:
@@ -24,9 +28,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     public var videoManager = VideoNetworkService()
     
     private let model = ArrayModel(values: [Video]())
- 
     
-
+    private lazy var height = self.view.frame.width - Constants.constatn
+ 
     // MARK:
     // MARK:  View Life Cycle
     override func viewDidLoad() {
@@ -108,8 +112,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = Constants.constatnWidth
+        let height = self.height * 9 / 16 + Constants.constatnWidth
         
-        let height = (view.frame.width - 16 - 16) * 9 / 16 + 50
         return CGSize(width: view.frame.width, height: height + 16 + 68)
     }
     
