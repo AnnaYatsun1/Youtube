@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Youtube/View/SettingsLauncher/SettingsLauncher.swift"
-            timestampString = "580827600.650034"
+            timestampString = "581251193.6925581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -121,77 +121,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Youtube/Controllers/HomeViewController.swift"
-            timestampString = "580827269.953951"
+            filePath = "Youtube/View/MenuBar.swift"
+            timestampString = "581251193.692803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "HomeViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Youtube.HomeViewController.redirectToSettingsController() -&gt; ()"
-                  moduleName = "Youtube"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/student/Documents/Youtube_proj/Youtube/Youtube/Controllers/HomeViewController.swift"
-                  timestampString = "580729986.575351"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "140"
-                  endingLineNumber = "140"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Youtube.EventMenuState, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in Youtube.HomeViewController.redirectToSettingsController() -&gt; ()"
-                  moduleName = "Youtube"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/student/Documents/Youtube_proj/Youtube/Youtube/Controllers/HomeViewController.swift"
-                  timestampString = "580729986.578054"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "10">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Youtube/Controllers/HomeViewController.swift"
-            timestampString = "580827585.475529"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "handlerSerch()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Youtube/View/MenuBar.swift"
-            timestampString = "580827600.650938"
+            filePath = "Youtube/Controllers/HomeViewController.swift"
+            timestampString = "581251193.692912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "setupMenuBer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

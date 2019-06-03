@@ -24,12 +24,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     public let settings = SettingsLauncher()
     public let menuBar = MenuBar()
     public let redView = UIView()
+
     
     public var videoManager = VideoNetworkService()
     
     private let model = ArrayModel(values: [Video]())
     
     private lazy var height = self.view.frame.width - Constants.constatn
+    private let titles = ["", "Tranding", "Subscription", "Account"]
  
     // MARK:
     // MARK:  View Life Cycle
@@ -50,6 +52,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.redirectToNewController()
         self.setupCollectionView()
         self.setupNavigationItem()
+        self.scrollMenuBar()
     }
     
     // MARK:
@@ -73,58 +76,25 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt cellForItemAtindexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! UICollectionViewCell
-        cell.backgroundColor = .blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! Cell
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        return CGSize(width: self.view.frame.width, height: self.view.frame.height - 25)
     }
-    
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.model.count        
-//    }
-//    
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt cellForItemAtindexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! VideoCell
-//        
-//        let video = self.model[cellForItemAtindexPath.row]
-//        cell.titleLable.text = video.value.title
-//        let urlString = video.value.tubnnailImageName 
-//        let url = URL(string: urlString)
-//        let placeholder = Image(named: "placeholder")
-//        cell.thumbnailImageView.kf.setImage(with: url, placeholder: placeholder)
-//        
-//        let userProfileImage = video.value.channel.profileImageName
-//        let urlImageProfile = URL(string: userProfileImage)
-//        cell.userProfileImageView.kf.setImage(with: urlImageProfile)
-//        
-//        let formater = NumberFormatter()
-//        formater.numberStyle = .decimal
-//        
-//        video.value.numberOfViews.do {
-//            let string = formater.string(from: NSNumber(integerLiteral: $0))
-//            let nill = " "
-//            cell.subTitleTixtView.text = video.value.channel.name + nill + string!
-//        }
-//
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width = Constants.constatnWidth
-//        let height = self.height * 9 / 16 + width
-//        
-//        return CGSize(width: view.frame.width, height: height + 16 + 68)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.menuBar.horizontalView.frame.origin.x = scrollView.contentOffset.x / 4
+    }
+    
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let index = Int(targetContentOffset.pointee.x / self.view.frame.width)
+        let indexPath = IndexPath(item: index, section: 0) 
+        self.menuBar.collectionView.selectItem(at: indexPath, animated:true, scrollPosition: .centeredHorizontally)
+        self.setTitleForIndex(index: index)
+      
     }
         
     // MARK:
@@ -190,14 +160,15 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.isPagingEnabled = true
         collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
-        collectionView?.register(VideoCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView?.register(Cell.self, forCellWithReuseIdentifier: "cellId")
     }
     
     private func setupNavigationItem() {
         let titleLable = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         let navigationBarAppearace = UINavigationBar.appearance()
+        titleLable.tintColor = .white
         navigationBarAppearace.tintColor = .white
-        
+
         self.navigationItem.title = "Home"
         self.navigationItem.titleView = titleLable
         self.navigationController?.navigationBar.isTranslucent = false
@@ -206,28 +177,37 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
      
     private func scrollMenuIndex(menuIndex: Int) {
         let indexPath = IndexPath(row: menuIndex, section: 0)
-        collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
+        self.setTitleForIndex(index: menuIndex)
     }
     
+    private func scrollMenuBar() {
+        self.menuBar.observer.observer { menuBarStatus, _ in 
+            switch menuBarStatus {
+            case .home:
+                self.scrollMenuIndex(menuIndex: 0)
+            case .person:
+                self.scrollMenuIndex(menuIndex: 1)
+            case .fire:
+                self.scrollMenuIndex(menuIndex: 3)
+            case .youtube:
+                self.scrollMenuIndex(menuIndex: 2)
+            }
+        }
+    }
+    
+    private func setTitleForIndex(index: Int) {
+        if let titleLable = self.navigationItem.titleView as? UILabel {
+            titleLable.text = self.titles[index]
+            titleLable.center = self.menuBar.center
+        }
+    }
+        
     @objc func handlerMore() {
         self.settingsMenu.setupSettingMenu()
     }
     
-    @objc func handlerSerch() {
-        self.menuBar.observer.observer { menuBarStatus, _ in 
-            switch menuBarStatus {
-            case .home:
-               self.scrollMenuIndex(menuIndex: 0)
-            case .person:
-                self.scrollMenuIndex(menuIndex: 1)
-            case .fire:
-                self.scrollMenuIndex(menuIndex: 2)
-            case .youtube:
-                self.scrollMenuIndex(menuIndex: 3)
-            
-            }
-            
-        }
+    @objc func handlerSerch() { 
 //        self.scrollMenuIndex(menuIndex: 3)
     }
 }

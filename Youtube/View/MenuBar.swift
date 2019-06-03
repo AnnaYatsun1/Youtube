@@ -22,7 +22,7 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
     // MARK:  Accessors
     public let horizontalView = UIView()
     
-    lazy fileprivate var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = UIColor.rgb(red: 230, green: 32, blue: 31)
@@ -72,8 +72,7 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId, for: indexPath) as! MenuCell
         cell.fill(menuBar: self.menuBar[indexPath.item])
-//        cell.imagesView.image = UIImage(named: imageNames[indexPath.item])?.withRenderingMode(.alwaysTemplate)
-//        
+        
         return cell
     }
     
@@ -96,10 +95,11 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
     {
         return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.75){
             let menuBarItem = self.menuBar[indexPath.item]
+            
             switch menuBarItem.menuBarIcon {
             case "home":
                 self.moveToHome()

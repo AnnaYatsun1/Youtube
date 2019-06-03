@@ -51,7 +51,7 @@ class SettingsLauncher: BaseViewControllerObserver, UIGestureRecognizerDelegate,
         }
     }
     
-    lazy fileprivate var  collectionViewSettingsMenu = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    lazy fileprivate var collectionViewSettingsMenu = UICollectionView(frame: .zero, collectionViewLayout: layout)
     lazy fileprivate var tapInterceptView: UITapGestureRecognizer = {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_:)))
         tap.delegate = self

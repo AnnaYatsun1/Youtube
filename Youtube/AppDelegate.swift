@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.addConstrainsWithFormat(format: "H:|[v0]|", views: statustBerBagraundView)
         window?.addConstrainsWithFormat(format: "V:|[v0(20)]|", views: statustBerBagraundView)
+                
         return true
     }
 
