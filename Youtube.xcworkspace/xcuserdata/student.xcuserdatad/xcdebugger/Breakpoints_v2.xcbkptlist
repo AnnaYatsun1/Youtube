@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Youtube/View/SettingsLauncher/SettingsLauncher.swift"
-            timestampString = "581251193.6925581"
+            timestampString = "581256787.9748549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Youtube/View/MenuBar.swift"
-            timestampString = "581251193.692803"
+            timestampString = "581256787.97498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Youtube/Controllers/HomeViewController.swift"
-            timestampString = "581251193.692912"
+            timestampString = "581256787.975073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "setupMenuBer()"
             landmarkType = "7">
          </BreakpointContent>

@@ -25,7 +25,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     public let menuBar = MenuBar()
     public let redView = UIView()
 
-    
     public var videoManager = VideoNetworkService()
     
     private let model = ArrayModel(values: [Video]())
@@ -37,42 +36,19 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     // MARK:  View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.observeringModel.value = self.model.observer { state, _ in 
-            switch state {
-            case .add: self.update()
-            case .remove: break
-            case .update: self.update()
-            }
-        }        
-     
         self.setupMenuBer()
         self.setupNavBarButtons()
-        self.fetchVideo()
         self.redirectToNewController()
         self.setupCollectionView()
         self.setupNavigationItem()
         self.scrollMenuBar()
     }
-    
-    // MARK:
-    // MARK:  Public
-    func update() {
-        DispatchQueue.main.async {
-            self.collectionView?.reloadData()
-        } 
-    }
-
-    func fetchVideo () {
-        self.videoManager.getVideo(self.model) { _ in 
-            print()
-        }
-    }
 
     // MARK:
     // MARK: UICollectionViewDelegate & UICollectionViewDataSource
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4     
+        return self.menuBar.CellsCount     
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt cellForItemAtindexPath: IndexPath) -> UICollectionViewCell {
@@ -86,7 +62,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.menuBar.horizontalView.frame.origin.x = scrollView.contentOffset.x / 4
+        let count = CGFloat(self.menuBar.CellsCount)
+        self.menuBar.horizontalView.frame.origin.x = scrollView.contentOffset.x / count
     }
     
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

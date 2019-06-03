@@ -22,6 +22,10 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
     // MARK:  Accessors
     public let horizontalView = UIView()
     
+    public var CellsCount: Int {
+        get { return self.imageNames.count }
+    }
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -31,6 +35,7 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
         
         return cv
     }()
+        
     
     private let cellId = "cellId"
     private let imageNames = ["home", "person", "youtube", "fire"]

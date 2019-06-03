@@ -22,11 +22,14 @@ class VideoCell: BaseCell {
                     width: self.frame.width - 16 - 44 - 8 - 16, 
                     height: 1000)
                 let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-                let estimatedRect = NSString(string: $0).boundingRect(
-                                            with: size, 
-                                            options: options, 
-                                            attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], 
-                                            context: nil)
+                let estimatedRect = NSString(
+                    string: $0)
+                        .boundingRect(
+                            with: size, 
+                            options: options, 
+                            attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], 
+                            context: nil
+                        )
                 if estimatedRect.size.height > 20 {
                     self.titleLableHightConstrain?.update(inset: 44) 
                 } else {
@@ -38,7 +41,6 @@ class VideoCell: BaseCell {
     
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Ani_Lorak")
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         
@@ -47,7 +49,6 @@ class VideoCell: BaseCell {
     
     let userProfileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "download")
         imageView.layer.cornerRadius = 22
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleToFill
@@ -58,7 +59,6 @@ class VideoCell: BaseCell {
     let titleLable: UILabel = {
         let imageView = UILabel()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.text = "Ani Lorak - sleep"
         imageView.numberOfLines = 2
         
         return imageView 
@@ -66,7 +66,6 @@ class VideoCell: BaseCell {
     
     let subTitleTixtView: UITextView = {
         let imageView = UITextView()
-        imageView.text = "Ani lorak - 1.400. 585 view for 2 years ago"
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
         imageView.textColor = UIColor.lightGray
