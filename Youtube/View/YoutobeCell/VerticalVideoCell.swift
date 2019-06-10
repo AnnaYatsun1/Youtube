@@ -15,7 +15,7 @@ fileprivate struct Constants {
     static let constatnWidth: CGFloat = 50
 }
 
-class Cell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class VerticalVideoCell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     // MARK:
     // MARK:  Accessors
     

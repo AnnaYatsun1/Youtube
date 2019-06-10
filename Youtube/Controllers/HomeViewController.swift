@@ -51,14 +51,25 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return self.menuBar.CellsCount     
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt cellForItemAtindexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! Cell
+    override func collectionView(
+        _ collectionView: UICollectionView, 
+        cellForItemAt cellForItemAtindexPath: IndexPath
+    )
+        -> UICollectionViewCell 
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! VerticalVideoCell
 
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width, height: self.view.frame.height - 25)
+    func collectionView(
+        _ collectionView: UICollectionView, 
+        layout collectionViewLayout: UICollectionViewLayout, 
+        sizeForItemAt indexPath: IndexPath
+    ) 
+        -> CGSize 
+    {
+        return CGSize(width: self.view.frame.width, height: self.view.frame.height - 50)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -66,12 +77,15 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.menuBar.horizontalView.frame.origin.x = scrollView.contentOffset.x / count
     }
     
-    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    override func scrollViewWillEndDragging(
+        _ scrollView: UIScrollView,
+        withVelocity velocity: CGPoint, 
+        targetContentOffset: UnsafeMutablePointer<CGPoint>
+    ) {
         let index = Int(targetContentOffset.pointee.x / self.view.frame.width)
         let indexPath = IndexPath(item: index, section: 0) 
         self.menuBar.collectionView.selectItem(at: indexPath, animated:true, scrollPosition: .centeredHorizontally)
         self.setTitleForIndex(index: index)
-      
     }
         
     // MARK:
@@ -115,6 +129,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             maker.left.right.equalToSuperview()
             maker.width.height.equalTo(50)
         }
+        
+        self.menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
     }
     
     private func setupNavBarButtons() {
@@ -137,7 +153,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.isPagingEnabled = true
         collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
-        collectionView?.register(Cell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView?.register(VerticalVideoCell.self, forCellWithReuseIdentifier: "cellId")
     }
     
     private func setupNavigationItem() {

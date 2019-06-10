@@ -88,7 +88,9 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
     ) 
         -> CGSize 
     {
-        return CGSize(width: self.frame.width / 4, height: self.frame.height)
+        let count = CGFloat(self.CellsCount)
+        
+        return CGSize(width: self.frame.width / count, height: self.frame.height)
     }
     
     func collectionView(
