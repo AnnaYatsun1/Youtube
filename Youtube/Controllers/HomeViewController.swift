@@ -57,7 +57,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     )
         -> UICollectionViewCell 
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! VerticalVideoCell
+     let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath)) ?? VerticalVideoCell()
 
         return cell
     }
@@ -143,8 +143,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     private func setupCollectionView() {
         let collectionView = self.collectionView
-        
-        if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+        if  let layout: UICollectionViewFlowLayout = cast(self.collectionView?.collectionViewLayout) {
             layout.scrollDirection = .horizontal
             layout.minimumLineSpacing = 0
         }
@@ -190,7 +189,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     private func setTitleForIndex(index: Int) {
-        if let titleLable = self.navigationItem.titleView as? UILabel {
+        if  let titleLable: UILabel = cast(self.navigationItem.titleView) {
             titleLable.text = self.titles[index]
             titleLable.center = self.menuBar.center
         }

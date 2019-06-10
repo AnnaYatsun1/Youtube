@@ -70,7 +70,7 @@ class VerticalVideoCell: BaseCell, UICollectionViewDelegate, UICollectionViewDat
     }
         
    func collectionView(_ collectionView: UICollectionView, cellForItemAt cellForItemAtindexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath) as! VideoCell
+            let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath)) ?? VideoCell()
             let video = self.model[cellForItemAtindexPath.row]
             cell.fill(video: video.value)  
     

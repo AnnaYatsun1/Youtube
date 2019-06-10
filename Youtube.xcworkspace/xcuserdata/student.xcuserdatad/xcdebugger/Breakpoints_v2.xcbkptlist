@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Youtube/View/MenuBar.swift"
-            timestampString = "581258267.125421"
+            timestampString = "581849756.655039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "collectionView(_:layout:minimumInteritemSpacingForSectionAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Youtube/Controllers/HomeViewController.swift"
-            timestampString = "581849044.358144"
+            timestampString = "581849756.655511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "redirectToNewController()"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "setupMenuBer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

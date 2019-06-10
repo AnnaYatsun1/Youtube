@@ -46,7 +46,7 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
         }
     }
    
-    private lazy var horizontalBarWidth = self.frame.width / 4 
+    private lazy var horizontalBarWidth = self.frame.width / CGFloat(CellsCount) 
     
     //MARK: -
     //MARK: Initializations
@@ -75,7 +75,7 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId, for: indexPath) as! MenuCell
+        let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)) ?? MenuCell()
         cell.fill(menuBar: self.menuBar[indexPath.item])
         
         return cell

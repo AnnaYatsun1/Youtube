@@ -121,7 +121,7 @@ class SettingsLauncher: BaseViewControllerObserver, UIGestureRecognizerDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! SettingsLauncherCell
+        let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)) ?? SettingsLauncherCell()
         let settings = self.settings[indexPath.row]
         cell.fill(setting: settings)
         
