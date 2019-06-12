@@ -14,6 +14,13 @@ fileprivate struct Constants {
     static let constatn:CGFloat = 32
     static let constatnWidth: CGFloat = 50
 }
+
+fileprivate enum ConstantsStringCellID: String  {
+    case trendingCellId
+    case subscriptionCellId
+    case cellId
+} 
+
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     // MARK:
@@ -24,13 +31,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     public let settings = SettingsLauncher()
     public let menuBar = MenuBar()
     public let redView = UIView()
+    public let videoManager = VideoNetworkService()
 
-    public var videoManager = VideoNetworkService()
-    
-    private let model = ArrayModel(values: [Video]())
-    
     private lazy var height = self.view.frame.width - Constants.constatn
-    private let titles = ["", "Tranding", "Subscription", "Account"]
+    private let titles = ["YouTube", "Tranding", "Subscription", "Account"]
+    private let model = ArrayModel(values: [Video]())
  
     // MARK:
     // MARK:  View Life Cycle
@@ -57,11 +62,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     )
         -> UICollectionViewCell 
     {
-     let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: cellForItemAtindexPath)) ?? VerticalVideoCell()
-
-        return cell
+        let indentifire = self.cellIndentifire(indexPathItem: cellForItemAtindexPath.item)
+        
+        return cast(collectionView.dequeueReusableCell(withReuseIdentifier: indentifire.rawValue, for: cellForItemAtindexPath)) ?? VerticalVideoCell()
     }
-    
+        
     func collectionView(
         _ collectionView: UICollectionView, 
         layout collectionViewLayout: UICollectionViewLayout, 
@@ -147,12 +152,15 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             layout.scrollDirection = .horizontal
             layout.minimumLineSpacing = 0
         }
-        
-        collectionView?.backgroundColor = UIColor.white
-        collectionView?.isPagingEnabled = true
-        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
-        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
-        collectionView?.register(VerticalVideoCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView.do {
+            $0.backgroundColor = UIColor.white
+            $0.isPagingEnabled = true
+            $0.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
+            $0.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 50, right: 0)
+            $0.register(VerticalVideoCell.self, forCellWithReuseIdentifier: ConstantsStringCellID.cellId.rawValue)
+            $0.register(VerticalTrendingVideoCell.self, forCellWithReuseIdentifier: ConstantsStringCellID.trendingCellId.rawValue)
+            $0.register(VerticalSubscriptionVideoCell.self, forCellWithReuseIdentifier: ConstantsStringCellID.subscriptionCellId.rawValue)
+        }
     }
     
     private func setupNavigationItem() {
@@ -160,7 +168,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         let navigationBarAppearace = UINavigationBar.appearance()
         titleLable.tintColor = .white
         navigationBarAppearace.tintColor = .white
-
+        titleLable.text = self.titles.first
+     
         self.navigationItem.title = "Home"
         self.navigationItem.titleView = titleLable
         self.navigationController?.navigationBar.isTranslucent = false
@@ -188,10 +197,20 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         }
     }
     
+    private func cellIndentifire(indexPathItem: Int) -> ConstantsStringCellID {
+        switch indexPathItem {
+        case 1:
+            return .trendingCellId
+        case 2:
+            return .subscriptionCellId
+        default:
+            return .cellId
+        }
+    }
+    
     private func setTitleForIndex(index: Int) {
         if  let titleLable: UILabel = cast(self.navigationItem.titleView) {
             titleLable.text = self.titles[index]
-            titleLable.center = self.menuBar.center
         }
     }
         

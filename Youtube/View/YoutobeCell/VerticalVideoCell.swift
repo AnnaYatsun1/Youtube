@@ -20,11 +20,11 @@ class VerticalVideoCell: BaseCell, UICollectionViewDelegate, UICollectionViewDat
     // MARK:  Accessors
     
     public let observeringModel = CancellableObject()
+    public let model = ArrayModel(values: [Video]())
+    public let videoManager = VideoNetworkService()
  
     private let collectionView: UICollectionView
-    private let model = ArrayModel(values: [Video]())
-    private let videoManager = VideoNetworkService()
-
+   
     //MARK: -
     //MARK: Initializations
     
@@ -88,7 +88,7 @@ class VerticalVideoCell: BaseCell, UICollectionViewDelegate, UICollectionViewDat
     // MARK:
     // MARK: Private
     
-    private func fetchVideo () {
+    func fetchVideo () {
         self.videoManager.getVideo(self.model) { _ in 
      
         }
