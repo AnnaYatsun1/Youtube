@@ -76,6 +76,8 @@
 		3FFB68B722940927005DF6CB /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB68B622940927005DF6CB /* UICollectionView+Extension.swift */; };
 		3FFC2C3622B0E9BA002513EF /* VerticalTrendingVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C3522B0E9BA002513EF /* VerticalTrendingVideoCell.swift */; };
 		3FFC2C3A22B0EB17002513EF /* VerticalSubscriptionVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C3922B0EB17002513EF /* VerticalSubscriptionVideoCell.swift */; };
+		3FFC2C3F22B10795002513EF /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C3E22B10795002513EF /* VideoPlayer.swift */; };
+		3FFC2C4122B10BC7002513EF /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C4022B10BC7002513EF /* VideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +154,8 @@
 		3FFB68B622940927005DF6CB /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		3FFC2C3522B0E9BA002513EF /* VerticalTrendingVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTrendingVideoCell.swift; sourceTree = "<group>"; };
 		3FFC2C3922B0EB17002513EF /* VerticalSubscriptionVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSubscriptionVideoCell.swift; sourceTree = "<group>"; };
+		3FFC2C3E22B10795002513EF /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		3FFC2C4022B10BC7002513EF /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		C54EDF3D6F6058462E6DD1EF /* Pods_Youtube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC8B4214FD8B79E0B921F5CD /* Pods-Youtube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube.debug.xcconfig"; path = "Target Support Files/Pods-Youtube/Pods-Youtube.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -360,6 +364,7 @@
 				3F4978822255F78E00161C2C /* YoutobeCell */,
 				3F6BC92E2295401800962147 /* SettingsLauncher */,
 				3F8C1B152269B466001310E4 /* MenuBar.swift */,
+				3FFC2C4022B10BC7002513EF /* VideoPlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 		3F49788F2256414600161C2C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FFC2C3D22B1077D002513EF /* VideoPlayer */,
 				3F86576A223BAC660050232D /* HomeViewController.swift */,
 				3F8ABB4D229BDA36009EF3C0 /* BaseViewControllerObserver.swift */,
 				3F8ABB4F229BE137009EF3C0 /* SettingsViewController.swift */,
@@ -439,6 +445,14 @@
 				3F8ABB4722958077009EF3C0 /* SettingsLauncherCell.swift */,
 			);
 			path = SettingsLauncherCell;
+			sourceTree = "<group>";
+		};
+		3FFC2C3D22B1077D002513EF /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				3FFC2C3E22B10795002513EF /* VideoPlayer.swift */,
+			);
+			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,7 +600,9 @@
 				3F07DD9D228184A3007E831A /* UINib+Init.swift in Sources */,
 				3F07DD99228184A3007E831A /* Closure.swift in Sources */,
 				3F07DDAD228184A3007E831A /* Conditions.swift in Sources */,
+				3FFC2C3F22B10795002513EF /* VideoPlayer.swift in Sources */,
 				3F5D5FAB229EA4CE00413D20 /* MenuControllerObserver.swift in Sources */,
+				3FFC2C4122B10BC7002513EF /* VideoPlayerView.swift in Sources */,
 				3F07DD9A228184A3007E831A /* Event.swift in Sources */,
 				3F07DD98228184A3007E831A /* RootViewRepresentable.swift in Sources */,
 				3F07DD96228184A3007E831A /* ObservableObject.Observer.swift in Sources */,

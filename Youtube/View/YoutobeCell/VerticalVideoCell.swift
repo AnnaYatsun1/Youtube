@@ -24,14 +24,13 @@ class VerticalVideoCell: BaseCell, UICollectionViewDelegate, UICollectionViewDat
     public let videoManager = VideoNetworkService()
  
     private let collectionView: UICollectionView
+    private let vodeoPlayer = VideoPlayer()
    
     //MARK: -
     //MARK: Initializations
     
     override init(frame: CGRect) {        
         let layout = UICollectionViewFlowLayout()
-//        self.layout = layout
-
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)  
         
         super.init(frame: frame)
@@ -85,15 +84,22 @@ class VerticalVideoCell: BaseCell, UICollectionViewDelegate, UICollectionViewDat
         return 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.vodeoPlayer.setupVideoPlayer()
+    }
+    
     // MARK:
-    // MARK: Private
+    // MARK: Public
     
     func fetchVideo () {
         self.videoManager.getVideo(self.model) { _ in 
-     
+            
         }
     }
     
+    // MARK:
+    // MARK: Private
+        
     private func update() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
