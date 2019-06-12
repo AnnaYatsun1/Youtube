@@ -78,7 +78,7 @@ class SettingsLauncher: BaseViewControllerObserver, UIGestureRecognizerDelegate,
     // MARK:  Public
     
     public func setupSettingMenu()  {
-      if let windows = UIApplication.shared.keyWindow {
+        UIApplication.shared.keyWindow.do { windows in 
             self.backgroundColor = .white
             windows.addSubview(self)
             
@@ -166,7 +166,7 @@ class SettingsLauncher: BaseViewControllerObserver, UIGestureRecognizerDelegate,
             delay: 0, 
             options: .curveEaseOut, 
             animations: {
-                if let windows = UIApplication.shared.keyWindow {
+                UIApplication.shared.keyWindow.do { windows in 
                     self.collectionViewSettingsMenu.frame = CGRect(x: windows.frame.minX, 
                                                                    y: windows.frame.height - Constant.height, 
                                                                    width: self.collectionViewSettingsMenu.frame.width, 

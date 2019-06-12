@@ -15,7 +15,7 @@ class VideoPlayer {
     
     public func setupVideoPlayer() {
         print("SetupVideoPlayer")
-        if let keyWindow = UIApplication.shared.keyWindow {
+        UIApplication.shared.keyWindow.do { keyWindow in
             let videoView = UIView(frame: keyWindow.frame)
             videoView.frame = CGRect(x: keyWindow.frame.width - 100, y: keyWindow.frame.height - 100, width: 100, height: 100)
             videoView.backgroundColor = .white
@@ -29,7 +29,7 @@ class VideoPlayer {
             
             UIView.animate(withDuration: 0.5) {
                 videoView.frame =  keyWindow.frame
-            }
+            } 
         }
     }
     
