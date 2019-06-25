@@ -18,10 +18,10 @@ class VideoPlayerView: UIView, Spinnable {
     // MARK:  Accessors 
     private let player: AVPlayer?
     private let conteinerView: UIView?
-    
-    private var isPlaing = false
     private let interval = CMTime(value: 1, timescale: 2)
     
+    private var isPlaing = false
+   
     private let playStopButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "play"), for: .normal)
@@ -60,6 +60,9 @@ class VideoPlayerView: UIView, Spinnable {
         return slider
     }()
     
+    //MARK: -
+    //MARK: Initializations
+    
     override init(frame: CGRect) {
         self.player = AVPlayer(url: URL(string: Constants.utl)!)
         let playerLayer  = AVPlayerLayer(player: player)
@@ -88,7 +91,11 @@ class VideoPlayerView: UIView, Spinnable {
         self.createVideoLengthConstraints()
         self.createPlayStopButtonConstraints()
     }
-    
+        
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+        
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "currentItem.loadedTimeRanges" {
             self.hideSpinner()
@@ -98,10 +105,6 @@ class VideoPlayerView: UIView, Spinnable {
                 self.calculateTime(lable: self.videoLengthLabel, timer: item.duration)
             }
         }
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func handlerPause(_ sender: UIButton) {
@@ -119,6 +122,8 @@ class VideoPlayerView: UIView, Spinnable {
         }
     }
     
+    // MARK:
+    // MARK:  Private
     private func play() {
         self.player?.pause()
         self.playStopButton.setImage(UIImage(named: "play"), for: .normal)
