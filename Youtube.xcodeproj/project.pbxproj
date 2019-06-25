@@ -60,7 +60,6 @@
 		3F865769223BAC660050232D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F865768223BAC660050232D /* AppDelegate.swift */; };
 		3F86576B223BAC660050232D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F86576A223BAC660050232D /* HomeViewController.swift */; };
 		3F86576E223BAC660050232D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F86576C223BAC660050232D /* Main.storyboard */; };
-		3F865770223BAC680050232D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F86576F223BAC680050232D /* Assets.xcassets */; };
 		3F865773223BAC680050232D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F865771223BAC680050232D /* LaunchScreen.storyboard */; };
 		3F8ABB4822958077009EF3C0 /* SettingsLauncherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8ABB4722958077009EF3C0 /* SettingsLauncherCell.swift */; };
 		3F8ABB4C2297EB81009EF3C0 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8ABB4B2297EB81009EF3C0 /* Setting.swift */; };
@@ -70,7 +69,6 @@
 		3F8ABB54229C1F55009EF3C0 /* EventMenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8ABB53229C1F55009EF3C0 /* EventMenuState.swift */; };
 		3F8C1B162269B466001310E4 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8C1B152269B466001310E4 /* MenuBar.swift */; };
 		3F970B2322A1182800BD59C3 /* VerticalVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F970B2222A1182800BD59C3 /* VerticalVideoCell.swift */; };
-		3F970B4F22A5226D00BD59C3 /* objcclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F970B4E22A5226D00BD59C3 /* objcclass.m */; };
 		3FC201812292C48C003DE887 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC201802292C48C003DE887 /* Functional.swift */; };
 		3FFB68B52293FCD3005DF6CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB68B42293FCD3005DF6CB /* Model.swift */; };
 		3FFB68B722940927005DF6CB /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB68B622940927005DF6CB /* UICollectionView+Extension.swift */; };
@@ -78,6 +76,9 @@
 		3FFC2C3A22B0EB17002513EF /* VerticalSubscriptionVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C3922B0EB17002513EF /* VerticalSubscriptionVideoCell.swift */; };
 		3FFC2C3F22B10795002513EF /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C3E22B10795002513EF /* VideoPlayer.swift */; };
 		3FFC2C4122B10BC7002513EF /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C4022B10BC7002513EF /* VideoPlayerView.swift */; };
+		3FFC2C4422B131E0002513EF /* Spinnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C4322B131E0002513EF /* Spinnable.swift */; };
+		3FFC2C4822B132F9002513EF /* Spinnable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C4722B132F9002513EF /* Spinnable+Extensions.swift */; };
+		3FFC2C4A22BBB52D002513EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFC2C4922BBB52D002513EF /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,7 +136,6 @@
 		3F865768223BAC660050232D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F86576A223BAC660050232D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3F86576D223BAC660050232D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3F86576F223BAC680050232D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F865772223BAC680050232D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F865774223BAC680050232D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F8ABB4722958077009EF3C0 /* SettingsLauncherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncherCell.swift; sourceTree = "<group>"; };
@@ -146,9 +146,6 @@
 		3F8ABB53229C1F55009EF3C0 /* EventMenuState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMenuState.swift; sourceTree = "<group>"; };
 		3F8C1B152269B466001310E4 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		3F970B2222A1182800BD59C3 /* VerticalVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalVideoCell.swift; sourceTree = "<group>"; };
-		3F970B4C22A5224F00BD59C3 /* objcclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = objcclass.h; sourceTree = "<group>"; };
-		3F970B4D22A5226C00BD59C3 /* Youtube-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Youtube-Bridging-Header.h"; sourceTree = "<group>"; };
-		3F970B4E22A5226D00BD59C3 /* objcclass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objcclass.m; sourceTree = "<group>"; };
 		3FC201802292C48C003DE887 /* Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
 		3FFB68B42293FCD3005DF6CB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3FFB68B622940927005DF6CB /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -156,6 +153,9 @@
 		3FFC2C3922B0EB17002513EF /* VerticalSubscriptionVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSubscriptionVideoCell.swift; sourceTree = "<group>"; };
 		3FFC2C3E22B10795002513EF /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		3FFC2C4022B10BC7002513EF /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		3FFC2C4322B131E0002513EF /* Spinnable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinnable.swift; sourceTree = "<group>"; };
+		3FFC2C4722B132F9002513EF /* Spinnable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spinnable+Extensions.swift"; sourceTree = "<group>"; };
+		3FFC2C4922BBB52D002513EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C54EDF3D6F6058462E6DD1EF /* Pods_Youtube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC8B4214FD8B79E0B921F5CD /* Pods-Youtube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube.debug.xcconfig"; path = "Target Support Files/Pods-Youtube/Pods-Youtube.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,13 +192,11 @@
 		3F07DD5C22805ACE007E831A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3F07DDB3228186F9007E831A /* JSON */,
 				3F5D5FAC229EA8C500413D20 /* MenuBarModel.swift */,
-				3F07DD5D22805B01007E831A /* Video.swift */,
-				3F07DD6122806728007E831A /* Channel.swift */,
 				3F32E1C42292D0F500FBE041 /* ArrayModel.swift */,
 				3FFB68B42293FCD3005DF6CB /* Model.swift */,
 				3F8ABB4B2297EB81009EF3C0 /* Setting.swift */,
+				3F07DDB3228186F9007E831A /* JSON */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +272,7 @@
 				3F07DD7C228184A3007E831A /* UINib+Init.swift */,
 				3F07DD7D228184A3007E831A /* UITableView+Extensions.swift */,
 				3F07DD7E228184A3007E831A /* UIView+Sizes.swift */,
+				3FFC2C4722B132F9002513EF /* Spinnable+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -315,6 +314,7 @@
 				3F07DD91228184A3007E831A /* Cancellable.swift */,
 				3F07DD92228184A3007E831A /* Synchronizable.swift */,
 				3F32E1C62292D2F900FBE041 /* RequestServiceTypeAlamofire.swift */,
+				3FFC2C4322B131E0002513EF /* Spinnable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -322,6 +322,8 @@
 		3F07DDB3228186F9007E831A /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				3F07DD6122806728007E831A /* Channel.swift */,
+				3F07DD5D22805B01007E831A /* Video.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -361,10 +363,10 @@
 		3F49788E2256413C00161C2C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3FFC2C4222B128FE002513EF /* VideoPlayer */,
 				3F4978822255F78E00161C2C /* YoutobeCell */,
 				3F6BC92E2295401800962147 /* SettingsLauncher */,
 				3F8C1B152269B466001310E4 /* MenuBar.swift */,
-				3FFC2C4022B10BC7002513EF /* VideoPlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -416,27 +418,24 @@
 				3F07DD5C22805ACE007E831A /* Models */,
 				3F49788F2256414600161C2C /* Controllers */,
 				3F49788E2256413C00161C2C /* View */,
-				3F86577A223F9E530050232D /* Extensions */,
+				3F86577A223F9E530050232D /* Lib */,
 				3F865768223BAC660050232D /* AppDelegate.swift */,
 				3F86576C223BAC660050232D /* Main.storyboard */,
-				3F86576F223BAC680050232D /* Assets.xcassets */,
 				3F865771223BAC680050232D /* LaunchScreen.storyboard */,
+				3FFC2C4922BBB52D002513EF /* Assets.xcassets */,
 				3F865774223BAC680050232D /* Info.plist */,
 			);
 			path = Youtube;
 			sourceTree = "<group>";
 		};
-		3F86577A223F9E530050232D /* Extensions */ = {
+		3F86577A223F9E530050232D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
 				3F07DD6C228184A3007E831A /* Lib */,
 				3F49788722563DCE00161C2C /* Extensions+UIView.swift */,
 				3F49788A22563E6000161C2C /* Extensions+UIColor.swift */,
-				3F970B4C22A5224F00BD59C3 /* objcclass.h */,
-				3F970B4E22A5226D00BD59C3 /* objcclass.m */,
-				3F970B4D22A5226C00BD59C3 /* Youtube-Bridging-Header.h */,
 			);
-			path = Extensions;
+			path = Lib;
 			sourceTree = "<group>";
 		};
 		3F8ABB4622958063009EF3C0 /* SettingsLauncherCell */ = {
@@ -450,7 +449,15 @@
 		3FFC2C3D22B1077D002513EF /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		3FFC2C4222B128FE002513EF /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
 				3FFC2C3E22B10795002513EF /* VideoPlayer.swift */,
+				3FFC2C4022B10BC7002513EF /* VideoPlayerView.swift */,
 			);
 			path = VideoPlayer;
 			sourceTree = "<group>";
@@ -517,7 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F865773223BAC680050232D /* LaunchScreen.storyboard in Resources */,
-				3F865770223BAC680050232D /* Assets.xcassets in Resources */,
+				3FFC2C4A22BBB52D002513EF /* Assets.xcassets in Resources */,
 				3F86576E223BAC660050232D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +565,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Youtube/Pods-Youtube-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -566,6 +574,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +601,7 @@
 				3F32E1C32292CFCB00FBE041 /* VideoNetworkService.swift in Sources */,
 				3F07DDA6228184A3007E831A /* Optional+Extensions.swift in Sources */,
 				3F07DDA2228184A3007E831A /* DateFormatter+Short.swift in Sources */,
+				3FFC2C4822B132F9002513EF /* Spinnable+Extensions.swift in Sources */,
 				3F86576B223BAC660050232D /* HomeViewController.swift in Sources */,
 				3F8C1B162269B466001310E4 /* MenuBar.swift in Sources */,
 				3F07DD97228184A3007E831A /* Atomic.swift in Sources */,
@@ -630,13 +640,13 @@
 				3F07DDB0228184A3007E831A /* Synchronizable.swift in Sources */,
 				3F32E1C72292D2F900FBE041 /* RequestServiceTypeAlamofire.swift in Sources */,
 				3F32E1C92292D39A00FBE041 /* RequestServiceTypeForAlamofire.swift in Sources */,
+				3FFC2C4422B131E0002513EF /* Spinnable.swift in Sources */,
 				3F32E1C12292CF7A00FBE041 /* NetworkTask.swift in Sources */,
 				3F8ABB4C2297EB81009EF3C0 /* Setting.swift in Sources */,
 				3F07DDA0228184A3007E831A /* NSLocking+Do.swift in Sources */,
 				3F07DDA4228184A3007E831A /* DispatchTime+After.swift in Sources */,
 				3F07DDA5228184A3007E831A /* BinaryInteger+ToDouble.swift in Sources */,
 				3F07DD5E22805B01007E831A /* Video.swift in Sources */,
-				3F970B4F22A5226D00BD59C3 /* objcclass.m in Sources */,
 				3F07DDA9228184A3007E831A /* PerformOnThread.swift in Sources */,
 				3F07DD6222806728007E831A /* Channel.swift in Sources */,
 				3F865769223BAC660050232D /* AppDelegate.swift in Sources */,
@@ -805,7 +815,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = YAU.Youtube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "Youtube/Extensions/Youtube-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -828,7 +838,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = YAU.Youtube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Youtube/Extensions/Youtube-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

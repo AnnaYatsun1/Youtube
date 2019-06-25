@@ -9,13 +9,6 @@
 import UIKit
 import SnapKit
 
-//fileprivate struct Constant {
-//    static let home = "home"
-//    static let person = "person"
-//    static let youtube = "youtube"
-//    static let fire = "fire"
-//}
-
 class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout { 
     
     // MARK:

@@ -76,7 +76,7 @@ public func scope(action: () -> ()) {
     action()
 }
 
-public func call<Value>(action: () -> Value) -> Value {
+public func call<Value>(_ action: () -> Value) -> Value {
     return action()
 }
 

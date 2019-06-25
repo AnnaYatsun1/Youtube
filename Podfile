@@ -9,5 +9,6 @@ target 'Youtube' do
   pod 'SnapKit', '~> 4.0.0'
   pod 'Alamofire', '~> 4.0.0'
   pod 'Kingfisher', '~> 5.0'
+  pod 'MBProgressHUD', '~> 1.1.0'
 
 end
