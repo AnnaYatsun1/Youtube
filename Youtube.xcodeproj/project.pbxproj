@@ -55,7 +55,6 @@
 		3F49788B22563E6000161C2C /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49788A22563E6000161C2C /* Extensions+UIColor.swift */; };
 		3F49788D2256410500161C2C /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49788C2256410500161C2C /* VideoCell.swift */; };
 		3F5D5FAB229EA4CE00413D20 /* MenuControllerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D5FAA229EA4CE00413D20 /* MenuControllerObserver.swift */; };
-		3F5D5FAD229EA8C500413D20 /* MenuBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D5FAC229EA8C500413D20 /* MenuBarModel.swift */; };
 		3F6BC9302295404900962147 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BC92F2295404900962147 /* SettingsLauncher.swift */; };
 		3F865769223BAC660050232D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F865768223BAC660050232D /* AppDelegate.swift */; };
 		3F86576B223BAC660050232D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F86576A223BAC660050232D /* HomeViewController.swift */; };
@@ -67,9 +66,10 @@
 		3F8ABB50229BE137009EF3C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8ABB4F229BE137009EF3C0 /* SettingsViewController.swift */; };
 		3F8ABB52229C1DAF009EF3C0 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8ABB51229C1DAF009EF3C0 /* HelpViewController.swift */; };
 		3F8ABB54229C1F55009EF3C0 /* EventMenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8ABB53229C1F55009EF3C0 /* EventMenuState.swift */; };
-		3F8C1B162269B466001310E4 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8C1B152269B466001310E4 /* MenuBar.swift */; };
+		3F8C1B162269B466001310E4 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8C1B152269B466001310E4 /* MenuBarView.swift */; };
 		3F970B2322A1182800BD59C3 /* VerticalVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F970B2222A1182800BD59C3 /* VerticalVideoCell.swift */; };
 		3FC201812292C48C003DE887 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC201802292C48C003DE887 /* Functional.swift */; };
+		3FE1EF4822C383A900F999C0 /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF4722C383A900F999C0 /* MenuBarViewModel.swift */; };
 		3FFB68B52293FCD3005DF6CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB68B42293FCD3005DF6CB /* Model.swift */; };
 		3FFB68B722940927005DF6CB /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB68B622940927005DF6CB /* UICollectionView+Extension.swift */; };
 		3FFC2C3622B0E9BA002513EF /* VerticalTrendingVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C3522B0E9BA002513EF /* VerticalTrendingVideoCell.swift */; };
@@ -130,7 +130,6 @@
 		3F49788A22563E6000161C2C /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
 		3F49788C2256410500161C2C /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		3F5D5FAA229EA4CE00413D20 /* MenuControllerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuControllerObserver.swift; sourceTree = "<group>"; };
-		3F5D5FAC229EA8C500413D20 /* MenuBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarModel.swift; sourceTree = "<group>"; };
 		3F6BC92F2295404900962147 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
 		3F865765223BAC660050232D /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F865768223BAC660050232D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,9 +143,10 @@
 		3F8ABB4F229BE137009EF3C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3F8ABB51229C1DAF009EF3C0 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		3F8ABB53229C1F55009EF3C0 /* EventMenuState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMenuState.swift; sourceTree = "<group>"; };
-		3F8C1B152269B466001310E4 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		3F8C1B152269B466001310E4 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		3F970B2222A1182800BD59C3 /* VerticalVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalVideoCell.swift; sourceTree = "<group>"; };
 		3FC201802292C48C003DE887 /* Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
+		3FE1EF4722C383A900F999C0 /* MenuBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewModel.swift; sourceTree = "<group>"; };
 		3FFB68B42293FCD3005DF6CB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3FFB68B622940927005DF6CB /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		3FFC2C3522B0E9BA002513EF /* VerticalTrendingVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTrendingVideoCell.swift; sourceTree = "<group>"; };
@@ -192,7 +192,6 @@
 		3F07DD5C22805ACE007E831A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3F5D5FAC229EA8C500413D20 /* MenuBarModel.swift */,
 				3F32E1C42292D0F500FBE041 /* ArrayModel.swift */,
 				3FFB68B42293FCD3005DF6CB /* Model.swift */,
 				3F8ABB4B2297EB81009EF3C0 /* Setting.swift */,
@@ -366,7 +365,8 @@
 				3FFC2C4222B128FE002513EF /* VideoPlayer */,
 				3F4978822255F78E00161C2C /* YoutobeCell */,
 				3F6BC92E2295401800962147 /* SettingsLauncher */,
-				3F8C1B152269B466001310E4 /* MenuBar.swift */,
+				3F8C1B152269B466001310E4 /* MenuBarView.swift */,
+				3FE1EF4722C383A900F999C0 /* MenuBarViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -589,7 +589,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F5D5FAD229EA8C500413D20 /* MenuBarModel.swift in Sources */,
 				3F07DD9C228184A3007E831A /* FileExtension.swift in Sources */,
 				3F49788D2256410500161C2C /* VideoCell.swift in Sources */,
 				3F970B2322A1182800BD59C3 /* VerticalVideoCell.swift in Sources */,
@@ -603,7 +602,7 @@
 				3F07DDA2228184A3007E831A /* DateFormatter+Short.swift in Sources */,
 				3FFC2C4822B132F9002513EF /* Spinnable+Extensions.swift in Sources */,
 				3F86576B223BAC660050232D /* HomeViewController.swift in Sources */,
-				3F8C1B162269B466001310E4 /* MenuBar.swift in Sources */,
+				3F8C1B162269B466001310E4 /* MenuBarView.swift in Sources */,
 				3F07DD97228184A3007E831A /* Atomic.swift in Sources */,
 				3F07DDAF228184A3007E831A /* Cancellable.swift in Sources */,
 				3F07DD9B228184A3007E831A /* HTTP.swift in Sources */,
@@ -617,6 +616,7 @@
 				3F07DD98228184A3007E831A /* RootViewRepresentable.swift in Sources */,
 				3F07DD96228184A3007E831A /* ObservableObject.Observer.swift in Sources */,
 				3F07DD9E228184A3007E831A /* UITableView+Extensions.swift in Sources */,
+				3FE1EF4822C383A900F999C0 /* MenuBarViewModel.swift in Sources */,
 				3F07DD95228184A3007E831A /* Result.swift in Sources */,
 				3F07DDA3228184A3007E831A /* Sequence+Extensions.swift in Sources */,
 				3F07DDAB228184A3007E831A /* ToString.swift in Sources */,

@@ -21,6 +21,8 @@ fileprivate enum ConstantsStringCellID: String  {
     case cellId
 } 
 
+
+
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     // MARK:
@@ -29,7 +31,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     public let observering = CancellableObject()
     public let settingsMenu = SettingsLauncher()
     public let settings = SettingsLauncher()
-    public let menuBar = MenuBar()
+    public var menuBar = MenuBarView()// {
+//        let menuBarView = MenuBarView()
+//        menuBarView
+//        return menuBarView
+//    }
+//    public let menuBarModel = MenuBarModel()
+        
     public let redView = UIView()
     public let videoManager = VideoNetworkService()
 
@@ -41,19 +49,20 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     // MARK:  View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupMenuBer()
+        
+        self.setupMenuBarView()
         self.setupNavBarButtons()
         self.redirectToNewController()
         self.setupCollectionView()
         self.setupNavigationItem()
-        self.scrollMenuBar()
+//        self.scrollMenuBar()
     }
 
     // MARK:
     // MARK: UICollectionViewDelegate & UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.menuBar.CellsCount     
+        return self.menuBar.cellsCount     
     }
     
     override func collectionView(
@@ -78,7 +87,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let count = CGFloat(self.menuBar.CellsCount)
+        let count = CGFloat(self.menuBar.cellsCount)
         self.menuBar.horizontalView.frame.origin.x = scrollView.contentOffset.x / count
     }
     
@@ -120,7 +129,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
-    private func setupMenuBer() {
+    private func setupMenuBarView() {
+        self.menuBar.viewModel = MenuBarViewModel() { [weak self] in
+            self?.scrollMenuIndex(menuIndex: $0.rawValue)
+        }
+        
         self.redView.backgroundColor = UIColor.rgb(red: 230, green: 32, blue: 31)
         self.view.addSubview(self.redView)
         
@@ -183,18 +196,18 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     private func scrollMenuBar() {
-        self.menuBar.observer.observer { menuBarStatus, _ in 
-            switch menuBarStatus {
-            case .home:
-                self.scrollMenuIndex(menuIndex: 0)
-            case .person:
-                self.scrollMenuIndex(menuIndex: 1)
-            case .fire:
-                self.scrollMenuIndex(menuIndex: 3)
-            case .youtube:
-                self.scrollMenuIndex(menuIndex: 2)
-            }
-        }
+//        self.menuBar.observer.observer { menuBarStatus, _ in 
+//            switch menuBarStatus {
+//            case .home:
+//                self.scrollMenuIndex(menuIndex: 0)
+//            case .person:
+//                self.scrollMenuIndex(menuIndex: 1)
+//            case .fire:
+//                self.scrollMenuIndex(menuIndex: 3)
+//            case .youtube:
+//                self.scrollMenuIndex(menuIndex: 2)
+//            }
+//        }
     }
     
     private func cellIndentifire(indexPathItem: Int) -> ConstantsStringCellID {

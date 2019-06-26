@@ -1,5 +1,5 @@
 //
-//  MenuBar.swift
+//  MenuBarView.swift
 //  Youtube
 //
 //  Created by Anna Yatsun on 19/04/2019.
@@ -9,15 +9,17 @@
 import UIKit
 import SnapKit
 
-class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout { 
+class MenuBarView: UIView { 
+    
+    typealias State = MenuBarViewModel.BarState
     
     // MARK:
-    // MARK:  Accessors
+    // MARK: Properties
+    
     public let horizontalView = UIView()
     
-    public var CellsCount: Int {
-        get { return self.imageNames.count }
-    }
+    public var viewModel: MenuBarViewModel?
+    public var cellsCount: Int {  return self.viewModel?.iconNames.count ?? 0 }
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -29,17 +31,9 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
         return cv
     }()
         
-    
-    private let cellId = "cellId"
-    private let imageNames = ["home", "person", "youtube", "fire"]
-    
-    private var menuBar: [MenuBarModel] {       
-        return imageNames.map {
-            MenuBarModel(menuBarIcon: $0)
-        }
-    }
+    private let cellId = "cellId"    
    
-    private lazy var horizontalBarWidth = self.frame.width / CGFloat(CellsCount) 
+    private lazy var horizontalBarWidth = self.frame.width / CGFloat(self.cellsCount) 
     
     //MARK: -
     //MARK: Initializations
@@ -60,62 +54,9 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK:
-    // MARK: UICollectionViewDelegate & UICollectionViewDataSource
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)) ?? MenuCell()
-        cell.fill(menuBar: self.menuBar[indexPath.item])
-        
-        return cell
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView, 
-        layout collectionViewLayout: UICollectionViewLayout, 
-        sizeForItemAt indexPath: IndexPath
-    ) 
-        -> CGSize 
-    {
-        let count = CGFloat(self.CellsCount)
-        
-        return CGSize(width: self.frame.width / count, height: self.frame.height)
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView, 
-        layout collectionViewLayout: UICollectionViewLayout,
-        minimumInteritemSpacingForSectionAt section: Int
-    )
-        -> CGFloat 
-    {
-        return 0
-    }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.75){
-            let menuBarItem = self.menuBar[indexPath.item]
-            
-            switch menuBarItem.menuBarIcon {
-            case "home":
-                self.moveToHome()
-            case "person":
-                self.moveToPerson()
-            case "youtube":
-                self.moveToYoutube()
-            case "fire":
-                self.moveToFire()
-            default:
-                break
-            }
-            self.horizontalView.frame.origin.x = CGFloat(indexPath.item) * self.horizontalBarWidth
-            
-        } 
-    }
+    
+    
     
     private func setupHorizontalBar() {
         self.horizontalView.backgroundColor = UIColor.white
@@ -126,5 +67,57 @@ class MenuBar: MenuControllerObserver, UICollectionViewDataSource, UICollectionV
             maker.width.equalToSuperview().dividedBy(4)
             maker.height.equalTo(4)
         }
+    }
+}
+
+// MARK:
+// MARK: UICollectionViewDelegate & UICollectionViewDataSource
+
+extension MenuBarView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.cellsCount
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)) ?? MenuCell()
+        
+        if let iconName = self.viewModel?.iconNames[indexPath.row] {
+            cell.fill(image: UIImage(named: iconName))
+        }
+        
+        return cell
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView, 
+        layout collectionViewLayout: UICollectionViewLayout, 
+        sizeForItemAt indexPath: IndexPath
+        ) 
+        -> CGSize 
+    {
+        let count = CGFloat(self.cellsCount)
+        
+        return CGSize(width: self.frame.width / count, height: self.frame.height)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView, 
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAt section: Int
+        )
+        -> CGFloat 
+    {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.75){            
+            if let currentState = State(rawValue: indexPath.row) {
+                self.viewModel?.handler?(currentState)
+            }
+            
+            self.horizontalView.frame.origin.x = CGFloat(indexPath.item) * self.horizontalBarWidth
+        } 
     }
 }

@@ -145,6 +145,11 @@ class VideoCell: BaseCell {
             self.subTitleTixtView.text = video.channel.name + nill + string!
         }
     }
+    
+    override func prepareForReuse() {
+        self.thumbnailImageView.kf.cancelDownloadTask()
+        self.userProfileImageView.kf.cancelDownloadTask()
+    }
 }
 
 

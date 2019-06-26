@@ -47,7 +47,9 @@ class MenuCell: BaseCell {
         
     }
     
-    func fill(menuBar: MenuBarModel) {
-        self.imagesView.image = UIImage(named: menuBar.menuBarIcon)?.withRenderingMode(.alwaysTemplate)
+    func fill(image: UIImage?) {
+        self.imagesView.image = image
     }
 }
+
+
