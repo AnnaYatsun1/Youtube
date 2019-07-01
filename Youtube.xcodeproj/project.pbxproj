@@ -70,6 +70,11 @@
 		3FE1EF4822C383A900F999C0 /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF4722C383A900F999C0 /* MenuBarViewModel.swift */; };
 		3FE1EF4A22C4DE8E00F999C0 /* SettingsLauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF4922C4DE8E00F999C0 /* SettingsLauncherViewController.swift */; };
 		3FE1EF5522C6247700F999C0 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5422C6247700F999C0 /* PresentationModel.swift */; };
+		3FE1EF5722CA122900F999C0 /* HomeViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5622CA122900F999C0 /* HomeViewController1.swift */; };
+		3FE1EF5A22CA128E00F999C0 /* ControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5922CA128E00F999C0 /* ControllerModel.swift */; };
+		3FE1EF5D22CA12CE00F999C0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5C22CA12CE00F999C0 /* ViewModel.swift */; };
+		3FE1EF6022CA12F400F999C0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5F22CA12F400F999C0 /* HomeViewModel.swift */; };
+		3FE1EF6422CA144100F999C0 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF6322CA144100F999C0 /* HomeDataSource.swift */; };
 		3FFB68B52293FCD3005DF6CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB68B42293FCD3005DF6CB /* Model.swift */; };
 		3FFB68B722940927005DF6CB /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB68B622940927005DF6CB /* UICollectionView+Extension.swift */; };
 		3FFC2C3622B0E9BA002513EF /* VerticalTrendingVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC2C3522B0E9BA002513EF /* VerticalTrendingVideoCell.swift */; };
@@ -147,6 +152,11 @@
 		3FE1EF4722C383A900F999C0 /* MenuBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewModel.swift; sourceTree = "<group>"; };
 		3FE1EF4922C4DE8E00F999C0 /* SettingsLauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncherViewController.swift; sourceTree = "<group>"; };
 		3FE1EF5422C6247700F999C0 /* PresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
+		3FE1EF5622CA122900F999C0 /* HomeViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController1.swift; sourceTree = "<group>"; };
+		3FE1EF5922CA128E00F999C0 /* ControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerModel.swift; sourceTree = "<group>"; };
+		3FE1EF5C22CA12CE00F999C0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3FE1EF5F22CA12F400F999C0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3FE1EF6322CA144100F999C0 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		3FFB68B42293FCD3005DF6CB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3FFB68B622940927005DF6CB /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		3FFC2C3522B0E9BA002513EF /* VerticalTrendingVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTrendingVideoCell.swift; sourceTree = "<group>"; };
@@ -192,6 +202,8 @@
 		3F07DD5C22805ACE007E831A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3FE1EF5B22CA12AE00F999C0 /* ViewModel */,
+				3FE1EF5822CA127E00F999C0 /* ControllerModel */,
 				3FE1EF5322C6244000F999C0 /* PresentetionModel */,
 				3F32E1C42292D0F500FBE041 /* ArrayModel.swift */,
 				3FFB68B42293FCD3005DF6CB /* Model.swift */,
@@ -412,6 +424,7 @@
 		3F865767223BAC660050232D /* Youtube */ = {
 			isa = PBXGroup;
 			children = (
+				3FE1EF6122CA140A00F999C0 /* Source */,
 				3FE1EF4B22C619A100F999C0 /* UI */,
 				3F07DD6322817F60007E831A /* Managers */,
 				3F07DD5C22805ACE007E831A /* Models */,
@@ -456,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				3F86576A223BAC660050232D /* HomeViewController.swift */,
+				3FE1EF5622CA122900F999C0 /* HomeViewController1.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -492,6 +506,47 @@
 				3FE1EF5422C6247700F999C0 /* PresentationModel.swift */,
 			);
 			path = PresentetionModel;
+			sourceTree = "<group>";
+		};
+		3FE1EF5822CA127E00F999C0 /* ControllerModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FE1EF5922CA128E00F999C0 /* ControllerModel.swift */,
+			);
+			path = ControllerModel;
+			sourceTree = "<group>";
+		};
+		3FE1EF5B22CA12AE00F999C0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FE1EF5C22CA12CE00F999C0 /* ViewModel.swift */,
+				3FE1EF5E22CA12E200F999C0 /* HomeViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3FE1EF5E22CA12E200F999C0 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FE1EF5F22CA12F400F999C0 /* HomeViewModel.swift */,
+			);
+			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
+		3FE1EF6122CA140A00F999C0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3FE1EF6222CA141800F999C0 /* DataSource */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3FE1EF6222CA141800F999C0 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3FE1EF6322CA144100F999C0 /* HomeDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		3FFC2C3D22B1077D002513EF /* VideoPlayer */ = {
@@ -641,6 +696,7 @@
 				3F49788D2256410500161C2C /* VideoCell.swift in Sources */,
 				3F970B2322A1182800BD59C3 /* VerticalVideoCell.swift in Sources */,
 				3F07DDAA228184A3007E831A /* Cast.swift in Sources */,
+				3FE1EF5722CA122900F999C0 /* HomeViewController1.swift in Sources */,
 				3F07DD60228064E8007E831A /* BaseCell.swift in Sources */,
 				3F07DDA1228184A3007E831A /* Date+ShortDescription.swift in Sources */,
 				3F8ABB50229BE137009EF3C0 /* SettingsViewController.swift in Sources */,
@@ -655,11 +711,13 @@
 				3F07DDAF228184A3007E831A /* Cancellable.swift in Sources */,
 				3F07DD9B228184A3007E831A /* HTTP.swift in Sources */,
 				3F07DD9D228184A3007E831A /* UINib+Init.swift in Sources */,
+				3FE1EF6022CA12F400F999C0 /* HomeViewModel.swift in Sources */,
 				3F07DD99228184A3007E831A /* Closure.swift in Sources */,
 				3F07DDAD228184A3007E831A /* Conditions.swift in Sources */,
 				3FFC2C3F22B10795002513EF /* VideoPlayer.swift in Sources */,
 				3FFC2C4122B10BC7002513EF /* VideoPlayerView.swift in Sources */,
 				3F07DD9A228184A3007E831A /* Event.swift in Sources */,
+				3FE1EF6422CA144100F999C0 /* HomeDataSource.swift in Sources */,
 				3F07DD98228184A3007E831A /* RootViewRepresentable.swift in Sources */,
 				3F07DD96228184A3007E831A /* ObservableObject.Observer.swift in Sources */,
 				3F07DD9E228184A3007E831A /* UITableView+Extensions.swift in Sources */,
@@ -681,6 +739,7 @@
 				3F07DDA8228184A3007E831A /* Strideable+Times.swift in Sources */,
 				3F32E1BF2292CEC400FBE041 /* RequestService.swift in Sources */,
 				3FFC2C3A22B0EB17002513EF /* VerticalSubscriptionVideoCell.swift in Sources */,
+				3FE1EF5A22CA128E00F999C0 /* ControllerModel.swift in Sources */,
 				3F07DD93228184A3007E831A /* ObservableObject.swift in Sources */,
 				3F07DDA7228184A3007E831A /* BinaryFloatingPoint+ToInt.swift in Sources */,
 				3FC201812292C48C003DE887 /* Functional.swift in Sources */,
@@ -694,6 +753,7 @@
 				3F07DDA4228184A3007E831A /* DispatchTime+After.swift in Sources */,
 				3F07DDA5228184A3007E831A /* BinaryInteger+ToDouble.swift in Sources */,
 				3F07DD5E22805B01007E831A /* Video.swift in Sources */,
+				3FE1EF5D22CA12CE00F999C0 /* ViewModel.swift in Sources */,
 				3F07DDA9228184A3007E831A /* PerformOnThread.swift in Sources */,
 				3F07DD6222806728007E831A /* Channel.swift in Sources */,
 				3F865769223BAC660050232D /* AppDelegate.swift in Sources */,

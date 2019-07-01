@@ -9,6 +9,31 @@
 import UIKit
 import SnapKit
 
+class FirstUIViewController: UIView {
+    
+    
+}
+
+class MenuBarController: UITabBarController {
+//    
+    override func viewDidLoad() {
+
+        let firstViewController = SettingsViewController()
+        
+        firstViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        
+        let secondViewController = HelpViewController()
+        
+        secondViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        
+        let tabBarList = [firstViewController, secondViewController]
+        
+        viewControllers = tabBarList
+    }
+    
+}
+
+
 class MenuBarView: UIView { 
     
     typealias State = MenuBarViewModel.BarState

@@ -169,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Youtube/Models/PresentetionModel/PresentationModel.swift"
-            timestampString = "583668052.653199"
+            filePath = "Youtube/UI/Controllers/SettingsLauncherViewController/SettingsLauncherViewController.swift"
+            timestampString = "583677366.906273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "init(viewModel:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,74 +185,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Youtube/Models/PresentetionModel/PresentationModel.swift"
-            timestampString = "583668052.653953"
+            filePath = "Youtube/UI/Controllers/SettingsLauncherViewController/SettingsLauncherViewController.swift"
+            timestampString = "583677366.9063359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "HomeViewController1"
-            landmarkType = "3">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "prepareSettingsEventsHandler()"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Youtube.HomeViewController1.(dataSource in _87CEA43C3D899A548335A787396090A7).getter : Swift.Optional&lt;Youtube.HomeDataSource&gt;"
+                  symbolName = "Youtube.SettingsLauncherViewController.(prepareSettingsEventsHandler in _8101F78BFF690C8F60B9C4226893C384)() -&gt; ()"
                   moduleName = "Youtube"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/student/Youtube/Youtube/Models/PresentetionModel/PresentationModel.swift"
-                  timestampString = "583667622.848902"
+                  urlString = "file:///Users/student/Youtube/Youtube/UI/Controllers/SettingsLauncherViewController/SettingsLauncherViewController.swift"
+                  timestampString = "583677367.179016"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "114">
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "22">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Youtube.HomeViewController1.(dataSource in _87CEA43C3D899A548335A787396090A7).setter : Swift.Optional&lt;Youtube.HomeDataSource&gt;"
+                  symbolName = "closure #1 (Youtube.EventMenuState) -&gt; () in Youtube.SettingsLauncherViewController.(prepareSettingsEventsHandler in _8101F78BFF690C8F60B9C4226893C384)() -&gt; ()"
                   moduleName = "Youtube"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/student/Youtube/Youtube/Models/PresentetionModel/PresentationModel.swift"
-                  timestampString = "583667622.850744"
+                  urlString = "file:///Users/student/Youtube/Youtube/UI/Controllers/SettingsLauncherViewController/SettingsLauncherViewController.swift"
+                  timestampString = "583677367.181793"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Youtube.HomeViewController1.init(presentationModel: Youtube.HomePresentationModel, viewModel: Youtube.HomeViewModel, model: Youtube.HomeControllerModel, uiCollectionViewLayout: __C.UICollectionViewLayout) -&gt; Youtube.HomeViewController1"
-                  moduleName = "Youtube"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/student/Youtube/Youtube/Models/PresentetionModel/PresentationModel.swift"
-                  timestampString = "583667622.8529119"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "74">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Youtube.HomeViewController1.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Youtube.HomeViewController1&gt;"
-                  moduleName = "Youtube"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/student/Youtube/Youtube/Models/PresentetionModel/PresentationModel.swift"
-                  timestampString = "583667622.8557301"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "50">
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "27">
                </Location>
             </Locations>
          </BreakpointContent>

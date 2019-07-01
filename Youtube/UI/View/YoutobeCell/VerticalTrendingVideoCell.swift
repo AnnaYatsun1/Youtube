@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class VerticalTrendingVideoCell: VerticalVideoCell {
   
     override func fetchVideo() {

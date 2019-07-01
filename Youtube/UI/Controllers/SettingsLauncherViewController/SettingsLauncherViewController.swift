@@ -33,6 +33,10 @@ class  SettingsLauncherViewController: UIViewController {
     private func prepareSettingsEventsHandler() {
         self.settingsMenuView.settingsViewEventHandler = { [weak self] event in
             switch event {
+            case .settings: 
+                self?.moveToHelpController(viewController: SettingsViewController())
+            case .help:
+                self?.moveToHelpController(viewController: HelpViewController())
             default:
                 break
             }
@@ -41,6 +45,10 @@ class  SettingsLauncherViewController: UIViewController {
   
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil) { // onTap не понятное название
         self.dismiss(animated: true)
+    }
+    
+    private func moveToHelpController(viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
