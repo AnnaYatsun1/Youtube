@@ -8,10 +8,10 @@
 
 import Foundation
 
-public enum EventMenuState: String {
-    case settings = "Settings"
-    case help
-    case cancel
-    case feedback
-    case switch_account
-}
+//public enum EventMenuState: String {
+//    case settings = "Settings"
+//    case help
+//    case cancel
+//    case feedback
+//    case switch_account
+//}

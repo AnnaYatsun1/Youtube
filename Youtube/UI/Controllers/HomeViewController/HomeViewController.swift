@@ -15,31 +15,67 @@ fileprivate struct Constants {
     static let constatnWidth: CGFloat = 50
 }
 
-fileprivate enum ConstantsStringCellID: String  {
+enum ConstantsStringCellID: String  {
     case trendingCellId
     case subscriptionCellId
     case cellId
 } 
 
 
+//protocol ControllerModel { // хранение стейтов, обработка стейтов, походы на сервер
+//    
+//    func configure()
+//}
 
-class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+//class ViewModel<Events> { // Хроняться вьюхи, и отвечает за хендлинг ивентов с вьюхи
+//    
+//    var eventHandler: ((Events) -> ())?
+//}
+
+class ViewController<PresentationViewModel: PresentationModel, Events, ViewModelType: ViewModel<Events>, Model: ControllerModel>: UICollectionViewController {
+
+    // отвечает за навигацию, и вызова моделей
+    
+    let presentationModel: PresentationViewModel
+    let viewModel: ViewModelType
+    let model: Model
+    
+    init(presentationModel: PresentationViewModel, viewModel: ViewModelType, model: Model, uiCollectionViewLayout: UICollectionViewLayout) {
+        self.presentationModel = presentationModel
+        self.viewModel = viewModel
+        self.model = model
+        
+        super.init(collectionViewLayout: uiCollectionViewLayout)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.model.configure()
+        self.presentationModel.prepareLayout()
+        self.presentationModel.prepareStyle()
+        self.presentationModel.prepareConstraints()
+    }
+}
+
+class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout { // отнаследовать от ViewController и унести верстку в перезнтационную модель
 
     // MARK:
     // MARK:  Accessors
+    
     public let observeringModel = CancellableObject()
     public let observering = CancellableObject()
-    public let settingsMenu = SettingsLauncher()
-    public let settings = SettingsLauncher()
-    public var menuBar = MenuBarView()// {
-//        let menuBarView = MenuBarView()
-//        menuBarView
-//        return menuBarView
-//    }
-//    public let menuBarModel = MenuBarModel()
-        
+    public let settingsMenu = SettingsLauncherView()
+    public let settings = SettingsLauncherView()
+    public var menuBar = MenuBarView()
+
     public let redView = UIView()
     public let videoManager = VideoNetworkService()
+    public let modelSettingsLauncherState = ModelSettingsLauncherState(state: .settings)
 
     private lazy var height = self.view.frame.width - Constants.constatn
     private let titles = ["YouTube", "Tranding", "Subscription", "Account"]
@@ -52,10 +88,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         self.setupMenuBarView()
         self.setupNavBarButtons()
-        self.redirectToNewController()
+//        self.redirectToNewController()
         self.setupCollectionView()
         self.setupNavigationItem()
-//        self.scrollMenuBar()
     }
 
     // MARK:
@@ -105,30 +140,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     // MARK:
     // MARK:  Private
     
-  private  func redirectToNewController() {
-        // can replace for Coordinator
-        self.observering.value = self.settingsMenu.observer.observer { menuState, _ in 
-            switch menuState {
-            case .settings: 
-               self.moveToSettingsController()
-            case .help: 
-                self.moveToHelpController()
-            default: 
-                break
-            }
-        }
-    }
-    
-    private func moveToHelpController() {
-        let helpViewController = HelpViewController()
-        self.navigationController?.pushViewController(helpViewController, animated: true)
-    }
-    
-    private func moveToSettingsController() {
-        let settingsViewController = SettingsViewController()
-        self.navigationController?.pushViewController(settingsViewController, animated: true)
-    }
-    
     private func setupMenuBarView() {
         self.menuBar.viewModel = MenuBarViewModel() { [weak self] in
             self?.scrollMenuIndex(menuIndex: $0.rawValue)
@@ -165,6 +176,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             layout.scrollDirection = .horizontal
             layout.minimumLineSpacing = 0
         }
+        
         collectionView.do {
             $0.backgroundColor = UIColor.white
             $0.isPagingEnabled = true
@@ -194,22 +206,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
         self.setTitleForIndex(index: menuIndex)
     }
-    
-    private func scrollMenuBar() {
-//        self.menuBar.observer.observer { menuBarStatus, _ in 
-//            switch menuBarStatus {
-//            case .home:
-//                self.scrollMenuIndex(menuIndex: 0)
-//            case .person:
-//                self.scrollMenuIndex(menuIndex: 1)
-//            case .fire:
-//                self.scrollMenuIndex(menuIndex: 3)
-//            case .youtube:
-//                self.scrollMenuIndex(menuIndex: 2)
-//            }
-//        }
-    }
-    
+
     private func cellIndentifire(indexPathItem: Int) -> ConstantsStringCellID {
         switch indexPathItem {
         case 1:
@@ -228,10 +225,15 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
         
     @objc func handlerMore() {
-        self.settingsMenu.setupSettingMenu()
+        let settingsViewController = SettingsLauncherViewController()
+        settingsViewController.modalPresentationStyle = .overCurrentContext
+        settingsViewController.modalTransitionStyle = .crossDissolve
+        
+        self.navigationController?.present(settingsViewController, animated: true, completion: nil)
     }
     
     @objc func handlerSerch() { 
-//        self.scrollMenuIndex(menuIndex: 3)
+
     }
 }
+

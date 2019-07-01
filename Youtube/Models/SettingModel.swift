@@ -9,7 +9,7 @@
 
 import Foundation
 
-class Setting {
+class SettingModel {
     // MARK:
     // MARK:  Accessors
     

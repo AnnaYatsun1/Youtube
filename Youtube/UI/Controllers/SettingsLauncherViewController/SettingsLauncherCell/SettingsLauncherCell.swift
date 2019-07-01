@@ -28,6 +28,8 @@ class SettingsLauncherCell: BaseCell {
         image.tintColor = UIColor.darkGray
             return image
     }()
+    
+    public var setingsState: ModelSettingsLauncherState?
 
     override var isHighlighted: Bool {
         didSet {
@@ -53,8 +55,10 @@ class SettingsLauncherCell: BaseCell {
         }
     }
     
-    func fill(setting: Setting) {
-        self.nameLable.text = setting.name
-        self.settingImage.image = UIImage(named: setting.imageName)
+    func fill(setting: ModelSettingsLauncherState) {
+        self.nameLable.text = setting.settingModel?.name
+        setting.settingModel.do {
+            self.settingImage.image = UIImage(named: $0.imageName)
+        }
     }
 }

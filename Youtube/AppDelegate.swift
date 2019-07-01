@@ -15,24 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
         
-        let layout = UICollectionViewFlowLayout()        
-        window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: layout))
+        let presentationModel = HomePresentationModel()
+        let homeControllerModel = HomeControllerModel()
+        let homeViewModel = HomeViewModel()
         
-//        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        let layout = UICollectionViewFlowLayout() 
+//        window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: layout))
+        
+//        
+        self.window?.rootViewController = UINavigationController(rootViewController: HomeViewController1(presentationModel: presentationModel, viewModel: homeViewModel, model: homeControllerModel, uiCollectionViewLayout: layout))
+        
         UINavigationBar.appearance().barTintColor = UIColor.rgb(red: 230, green: 32, blue: 31)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         application.statusBarStyle = .lightContent
+        
         let statustBerBagraundView = UIView()
         statustBerBagraundView.backgroundColor = UIColor.rgb(red: 194, green: 31, blue: 31)
-        window?.addSubview(statustBerBagraundView)
+        self.window?.addSubview(statustBerBagraundView)
         
-        
-        window?.addConstrainsWithFormat(format: "H:|[v0]|", views: statustBerBagraundView)
-        window?.addConstrainsWithFormat(format: "V:|[v0(20)]|", views: statustBerBagraundView)
+        self.window?.addConstrainsWithFormat(format: "H:|[v0]|", views: statustBerBagraundView)
+        self.window?.addConstrainsWithFormat(format: "V:|[v0(20)]|", views: statustBerBagraundView)
                 
         return true
     }

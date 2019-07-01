@@ -21,7 +21,7 @@ class VideoNetworkService: RequestServiceTypeForAlamofire {
     private let parser = ParserJSONYoutubeAPI()
     
      
-    public func getVideo(_ video: ArrayModel<Video>, completion: @escaping Closure.Execute<[Video]?>) -> NetworkTask? {
+    public func getVideo(_ video: ArrayModel<Video>, completion: Closure.Execute<[Video]?>? = nil) -> NetworkTask? {
        return self.getVideo(url: "\(Constant.baseUrl)/\(Constant.home)", video, completion: completion)
     }
     
@@ -33,7 +33,7 @@ class VideoNetworkService: RequestServiceTypeForAlamofire {
         return self.getVideo(url: "\(Constant.baseUrl)/\(Constant.subscriptions)", video, completion: completion)
     }
     
-    private func getVideo(url: String, _ video: ArrayModel<Video>, completion: @escaping Closure.Execute<[Video]?>) -> NetworkTask? {
+    private func getVideo(url: String, _ video: ArrayModel<Video>, completion:  Closure.Execute<[Video]?>? = nil) -> NetworkTask? {
         let urlCountry = URL(string: url)
         
         return  urlCountry.map { url in
@@ -44,7 +44,7 @@ class VideoNetworkService: RequestServiceTypeForAlamofire {
                             .analysis(
                                 success: {
                                     video.addAll(values: $0)
-                                    completion($0)
+                                    completion?($0)
                             },
                                 failure: { _ in
                                     
