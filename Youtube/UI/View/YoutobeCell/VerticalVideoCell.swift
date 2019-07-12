@@ -106,3 +106,64 @@ class VerticalVideoCell: BaseCell, UICollectionViewDelegate, UICollectionViewDat
         } 
     }
 }
+
+//class VerticalVideo: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+//    
+//    public let observeringModel = CancellableObject()
+//    public let model = ArrayModel(values: [Video]())
+//    public let videoManager = VideoNetworkService()
+//    
+//    private let vodeoPlayer = VideoPlayer()
+//    private var dataSource: VideoDataSource?
+//    
+//    
+//    override init(collectionViewLayout layout: UICollectionViewLayout) {
+//        super.init(collectionViewLayout: layout)
+//      
+//    }    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        self.collectionView?.dataSource = dataSource
+//        self.fetchVideo()
+//    }
+//    
+//    func fetchVideo () {
+//        self.videoManager.getVideo(self.model) { _ in 
+//        
+//        }
+//    }
+//}
+//
+//
+//class VideoDataSource: NSObject, UICollectionViewDataSource {
+//    
+//    public let model = ArrayModel(values: [Video]())
+//    public func count() -> Int {
+//        return self.model.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return self.count()
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let indentifire = self.cellIndentifire(indexPathItem: indexPath.item)
+//        
+//        return cast(collectionView.dequeueReusableCell(withReuseIdentifier: indentifire.rawValue, for: indexPath)) ?? VerticalVideoCell()
+//    }
+//    
+//    private func cellIndentifire(indexPathItem: Int) -> ConstantsStringCellID {
+//        switch indexPathItem {
+//        case 1:
+//            return .trendingCellId
+//        case 2:
+//            return .subscriptionCellId
+//        default:
+//            return .cellId
+//        }
+//    }
+//}

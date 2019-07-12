@@ -8,6 +8,13 @@
 
 import Foundation
 import  UIKit
+enum MainScreenEvents {
+    case home
+    case person
+    case youtube
+    case fire
+}
+
 
 class HomeViewController1: ViewController<HomePresentationModel, HomeEvents, HomeViewModel, HomeControllerModel>, UICollectionViewDelegateFlowLayout {
     
@@ -91,5 +98,65 @@ class HomeViewController1: ViewController<HomePresentationModel, HomeEvents, Hom
         if  let titleLable: UILabel = cast(self.navigationItem.titleView) {
             titleLable.text = self.presentationModel.titles[index]
         }
+    }
+}
+
+
+final class AppCoordinator { 
+    typealias MainScreenEventsHandler = (MainScreenEvents) -> ()
+    
+    enum Strings: String, StringLocalizable {
+        var tableName: String {
+            return "AppCoordinator"
+        }
+        
+        case qrScan
+        case createQR
+        case createPhoto
+        case moveAndZoom
+        case settings
+        case cropImage
+    }
+    
+    
+    private let navigationController: UINavigationController
+    
+     init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    public func start() {
+        self.startMain()
+    }
+    
+    private func startMain() {
+        let handler: MainScreenEventsHandler = { [weak self] event in
+            switch event {
+            case .home:
+                break
+            case .fire:
+                break
+            case .person:
+                break
+            case .youtube: 
+                break
+                
+//            case :
+//                break
+//            case .:
+//                self?.presentQRScaner()
+//            case .generateQR:
+//                self?.startQRCodeGenerator(image: nil)
+//            case .createImage(let image):
+//                self?.startQRCodeGenerator(image: image)
+//            case .settings:
+//                self?.startSettings()
+            }
+        }
+        
+        let mainViewController = MainScreenViewController(eventHandler: handler)
+        mainViewController.title = ""
+        self.navigationController.viewControllers = [mainViewController]
+    }
     }
 }

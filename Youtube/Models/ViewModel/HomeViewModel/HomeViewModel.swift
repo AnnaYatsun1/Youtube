@@ -13,8 +13,7 @@ enum HomeEvents {
     case presentSettings(SettingsLauncherViewController)
     case presentSearch
 }
-
-class HomeViewModel: ViewModel<HomeEvents> {
+class BaseViewModel: ViewModel<HomeEvents>  {
     var moreButton: UIBarButtonItem?
     var searchBarButtonItem: UIBarButtonItem?
     
@@ -42,4 +41,17 @@ class HomeViewModel: ViewModel<HomeEvents> {
         settingsViewController.modalTransitionStyle = .crossDissolve
         self.eventHandler?(.presentSettings(settingsViewController))
     }
+}
+
+
+class HomeViewModel: BaseViewModel {
+    
+}
+
+class Subscriprions: BaseViewModel {
+    
+}
+
+class Trending: BaseViewModel {
+    
 }

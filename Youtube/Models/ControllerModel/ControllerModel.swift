@@ -14,17 +14,16 @@ protocol ControllerModel { // хранение стейтов, обработк�
     func configure()
 }
 
-class HomeControllerModel: ControllerModel {
-    public let videoManager = VideoNetworkService()
+class BasicControllerModel: ControllerModel {
     public let model = ArrayModel(values: [Video]())
-    
+    public let videoManager = VideoNetworkService()   
     
     func configure() {
-        self.fetchVideo()
+        self.fetchVideo(videoManager)
     }
     
-    private func fetchVideo () {
-        self.videoManager.getVideo(self.model)
+    func fetchVideo(_ networkService: VideoNetworkService) {
+        
     }
 }
 

@@ -48,6 +48,7 @@ class  SettingsLauncherViewController: UIViewController {
     }
     
     private func moveToHelpController(viewController: UIViewController) {
+    
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

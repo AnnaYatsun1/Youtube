@@ -16,24 +16,23 @@ protocol PresentationModel { // отвечает за верстку
     func prepareStyle()
 }
 
-class HomePresentationModel: PresentationModel {
+class BaseHomePresentationModel: PresentationModel {
     public let titles = ["YouTube", "Tranding", "Subscription", "Account"]
     public let menuBar = MenuBarView()
     public let redView = UIView()
     public var titleLable: UILabel?
     
-    
     func prepareConstraints() {
         self.prepareConstraintsMenuBar()
         self.prepareConstraintsRedView()
     }
- 
+    
     func prepareLayout() {
-
+        
     }
     
     func prepareStyle() {
-       self.redView.backgroundColor = UIColor.rgb(red: 230, green: 32, blue: 31)
+        self.redView.backgroundColor = UIColor.rgb(red: 230, green: 32, blue: 31)
         
         self.titleLable = UILabel(frame: CGRect(x: 0, y: 0, width: self.menuBar.frame.width, height: self.menuBar.frame.height))
         let navigationBarAppearace = UINavigationBar.appearance()
@@ -44,11 +43,11 @@ class HomePresentationModel: PresentationModel {
     
     
     private func prepareConstraintsMenuBar() {
-    
+        
         self.menuBar.snp.makeConstraints { (maker) in
             maker.left.right.equalToSuperview()
             maker.width.height.equalTo(50)
-
+            
             self.menuBar.superview.do {
                 menuBar.topAnchor.constraint(equalTo: $0.safeAreaLayoutGuide.topAnchor).isActive = true
             }             
@@ -61,4 +60,17 @@ class HomePresentationModel: PresentationModel {
             maker.width.height.equalTo(50)
         }
     }
+    
+}
+
+class HomePresentationModel: BaseHomePresentationModel {
+  
+}
+
+class TrendingPresentationModel: BaseHomePresentationModel {
+    
+}
+
+class SubscriprionsPresentationModel: BaseHomePresentationModel {
+    
 }

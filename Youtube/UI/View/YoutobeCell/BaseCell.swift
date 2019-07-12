@@ -29,24 +29,3 @@ class  BaseCell: UICollectionViewCell {
         
     }
 }
-
-class  BaseCellTableView: UITableViewCell {
-    
-    //MARK: -
-    //MARK: Initializations
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK:
-    // MARK:  Public
-    
-    public func setupViews() {
-        
-    }
-}
