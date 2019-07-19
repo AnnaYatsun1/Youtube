@@ -66,12 +66,19 @@
 		3F8ABB54229C1F55009EF3C0 /* EventMenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8ABB53229C1F55009EF3C0 /* EventMenuState.swift */; };
 		3F8C1B162269B466001310E4 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8C1B152269B466001310E4 /* MenuBarView.swift */; };
 		3F970B2322A1182800BD59C3 /* VerticalVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F970B2222A1182800BD59C3 /* VerticalVideoCell.swift */; };
+		3FABEB9C22DC752D0057C967 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABEB9B22DC752D0057C967 /* AppCoordinator.swift */; };
+		3FABEBA022DC77220057C967 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABEB9F22DC77220057C967 /* RootViewController.swift */; };
+		3FABEBA222DC78710057C967 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABEBA122DC78710057C967 /* ViewController.swift */; };
+		3FABEBA522DC7E350057C967 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABEBA422DC7E350057C967 /* MainViewController.swift */; };
+		3FABEBA722DC7E660057C967 /* HomePresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABEBA622DC7E660057C967 /* HomePresentationModel.swift */; };
+		3FABEBA922DC7EA10057C967 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABEBA822DC7EA10057C967 /* SubscriptionViewController.swift */; };
+		3FABEBAB22DC7EB70057C967 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABEBAA22DC7EB70057C967 /* PersonViewController.swift */; };
+		3FABEBAD22DDD6600057C967 /* Swipable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABEBAC22DDD6600057C967 /* Swipable.swift */; };
 		3FC0606822D879BC00B6045A /* StringLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0606722D879BC00B6045A /* StringLocalizable.swift */; };
 		3FC201812292C48C003DE887 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC201802292C48C003DE887 /* Functional.swift */; };
 		3FE1EF4822C383A900F999C0 /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF4722C383A900F999C0 /* MenuBarViewModel.swift */; };
 		3FE1EF4A22C4DE8E00F999C0 /* SettingsLauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF4922C4DE8E00F999C0 /* SettingsLauncherViewController.swift */; };
 		3FE1EF5522C6247700F999C0 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5422C6247700F999C0 /* PresentationModel.swift */; };
-		3FE1EF5722CA122900F999C0 /* HomeViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5622CA122900F999C0 /* HomeViewController1.swift */; };
 		3FE1EF5A22CA128E00F999C0 /* ControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5922CA128E00F999C0 /* ControllerModel.swift */; };
 		3FE1EF5D22CA12CE00F999C0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5C22CA12CE00F999C0 /* ViewModel.swift */; };
 		3FE1EF6022CA12F400F999C0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1EF5F22CA12F400F999C0 /* HomeViewModel.swift */; };
@@ -152,12 +159,19 @@
 		3F8ABB53229C1F55009EF3C0 /* EventMenuState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMenuState.swift; sourceTree = "<group>"; };
 		3F8C1B152269B466001310E4 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		3F970B2222A1182800BD59C3 /* VerticalVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalVideoCell.swift; sourceTree = "<group>"; };
+		3FABEB9B22DC752D0057C967 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3FABEB9F22DC77220057C967 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		3FABEBA122DC78710057C967 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FABEBA422DC7E350057C967 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3FABEBA622DC7E660057C967 /* HomePresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresentationModel.swift; sourceTree = "<group>"; };
+		3FABEBA822DC7EA10057C967 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		3FABEBAA22DC7EB70057C967 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		3FABEBAC22DDD6600057C967 /* Swipable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipable.swift; sourceTree = "<group>"; };
 		3FC0606722D879BC00B6045A /* StringLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLocalizable.swift; sourceTree = "<group>"; };
 		3FC201802292C48C003DE887 /* Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
 		3FE1EF4722C383A900F999C0 /* MenuBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewModel.swift; sourceTree = "<group>"; };
 		3FE1EF4922C4DE8E00F999C0 /* SettingsLauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncherViewController.swift; sourceTree = "<group>"; };
 		3FE1EF5422C6247700F999C0 /* PresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
-		3FE1EF5622CA122900F999C0 /* HomeViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController1.swift; sourceTree = "<group>"; };
 		3FE1EF5922CA128E00F999C0 /* ControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerModel.swift; sourceTree = "<group>"; };
 		3FE1EF5C22CA12CE00F999C0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3FE1EF5F22CA12F400F999C0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -336,6 +350,7 @@
 				3F32E1C62292D2F900FBE041 /* RequestServiceTypeAlamofire.swift */,
 				3FFC2C4322B131E0002513EF /* Spinnable.swift */,
 				3FC0606722D879BC00B6045A /* StringLocalizable.swift */,
+				3FABEBAC22DDD6600057C967 /* Swipable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -396,10 +411,12 @@
 		3F49788F2256414600161C2C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FABEBA322DC7E250057C967 /* MainViewController */,
+				3FABEB9E22DC77220057C967 /* RootViewController */,
 				3FE1EF5022C61A1000F999C0 /* SettingsLauncherViewController */,
 				3FE1EF4F22C61A0800F999C0 /* HelpViewController */,
 				3FE1EF4E22C619FF00F999C0 /* SettingsViewController */,
-				3FE1EF4C22C619B000F999C0 /* HomeViewController */,
+				3FE1EF4C22C619B000F999C0 /* ViewControllers */,
 				3FFC2C3D22B1077D002513EF /* VideoPlayer */,
 			);
 			path = Controllers;
@@ -433,6 +450,7 @@
 		3F865767223BAC660050232D /* Youtube */ = {
 			isa = PBXGroup;
 			children = (
+				3FABEB9A22DC751D0057C967 /* AppCoordinator */,
 				3FE1EF6122CA140A00F999C0 /* Source */,
 				3FE1EF4B22C619A100F999C0 /* UI */,
 				3F07DD6322817F60007E831A /* Managers */,
@@ -465,6 +483,30 @@
 			path = SettingsLauncherCell;
 			sourceTree = "<group>";
 		};
+		3FABEB9A22DC751D0057C967 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3FABEB9B22DC752D0057C967 /* AppCoordinator.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		3FABEB9E22DC77220057C967 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FABEB9F22DC77220057C967 /* RootViewController.swift */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		3FABEBA322DC7E250057C967 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FABEBA422DC7E350057C967 /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
 		3FE1EF4B22C619A100F999C0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,13 +516,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		3FE1EF4C22C619B000F999C0 /* HomeViewController */ = {
+		3FE1EF4C22C619B000F999C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FABEBA122DC78710057C967 /* ViewController.swift */,
 				3F86576A223BAC660050232D /* HomeViewController.swift */,
-				3FE1EF5622CA122900F999C0 /* HomeViewController1.swift */,
+				3FABEBA822DC7EA10057C967 /* SubscriptionViewController.swift */,
+				3FABEBAA22DC7EB70057C967 /* PersonViewController.swift */,
 			);
-			path = HomeViewController;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		3FE1EF4E22C619FF00F999C0 /* SettingsViewController */ = {
@@ -513,6 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				3FE1EF5422C6247700F999C0 /* PresentationModel.swift */,
+				3FABEBA622DC7E660057C967 /* HomePresentationModel.swift */,
 			);
 			path = PresentetionModel;
 			sourceTree = "<group>";
@@ -708,11 +753,11 @@
 				3F49788D2256410500161C2C /* VideoCell.swift in Sources */,
 				3F970B2322A1182800BD59C3 /* VerticalVideoCell.swift in Sources */,
 				3F07DDAA228184A3007E831A /* Cast.swift in Sources */,
-				3FE1EF5722CA122900F999C0 /* HomeViewController1.swift in Sources */,
 				3F07DD60228064E8007E831A /* BaseCell.swift in Sources */,
 				3F07DDA1228184A3007E831A /* Date+ShortDescription.swift in Sources */,
 				3F8ABB50229BE137009EF3C0 /* SettingsViewController.swift in Sources */,
 				3F8ABB54229C1F55009EF3C0 /* EventMenuState.swift in Sources */,
+				3FABEBAD22DDD6600057C967 /* Swipable.swift in Sources */,
 				3F32E1C32292CFCB00FBE041 /* VideoNetworkService.swift in Sources */,
 				3F07DDA6228184A3007E831A /* Optional+Extensions.swift in Sources */,
 				3F07DDA2228184A3007E831A /* DateFormatter+Short.swift in Sources */,
@@ -727,21 +772,25 @@
 				3FE1EF6822CB602600F999C0 /* GetSubscriprionsModel.swift in Sources */,
 				3F07DD9D228184A3007E831A /* UINib+Init.swift in Sources */,
 				3FE1EF6022CA12F400F999C0 /* HomeViewModel.swift in Sources */,
+				3FABEBA222DC78710057C967 /* ViewController.swift in Sources */,
 				3F07DD99228184A3007E831A /* Closure.swift in Sources */,
 				3F07DDAD228184A3007E831A /* Conditions.swift in Sources */,
 				3FFC2C3F22B10795002513EF /* VideoPlayer.swift in Sources */,
 				3FFC2C4122B10BC7002513EF /* VideoPlayerView.swift in Sources */,
+				3FABEB9C22DC752D0057C967 /* AppCoordinator.swift in Sources */,
 				3F07DD9A228184A3007E831A /* Event.swift in Sources */,
 				3FE1EF6422CA144100F999C0 /* HomeDataSource.swift in Sources */,
 				3F07DD98228184A3007E831A /* RootViewRepresentable.swift in Sources */,
 				3F07DD96228184A3007E831A /* ObservableObject.Observer.swift in Sources */,
 				3F07DD9E228184A3007E831A /* UITableView+Extensions.swift in Sources */,
 				3FE1EF4822C383A900F999C0 /* MenuBarViewModel.swift in Sources */,
+				3FABEBA922DC7EA10057C967 /* SubscriptionViewController.swift in Sources */,
 				3F07DD95228184A3007E831A /* Result.swift in Sources */,
 				3F07DDA3228184A3007E831A /* Sequence+Extensions.swift in Sources */,
 				3F07DDAB228184A3007E831A /* ToString.swift in Sources */,
 				3F07DD94228184A3007E831A /* CancellableObject.swift in Sources */,
 				3F8ABB4822958077009EF3C0 /* SettingsLauncherCell.swift in Sources */,
+				3FABEBA522DC7E350057C967 /* MainViewController.swift in Sources */,
 				3F07DDAE228184A3007E831A /* Provider.swift in Sources */,
 				3FE1EF6622CB600800F999C0 /* HomeControllerModel.swift in Sources */,
 				3FE1EF4A22C4DE8E00F999C0 /* SettingsLauncherViewController.swift in Sources */,
@@ -764,14 +813,17 @@
 				3F32E1C92292D39A00FBE041 /* RequestServiceTypeForAlamofire.swift in Sources */,
 				3FFC2C4422B131E0002513EF /* Spinnable.swift in Sources */,
 				3F32E1C12292CF7A00FBE041 /* NetworkTask.swift in Sources */,
+				3FABEBA022DC77220057C967 /* RootViewController.swift in Sources */,
 				3F8ABB4C2297EB81009EF3C0 /* SettingModel.swift in Sources */,
 				3F07DDA0228184A3007E831A /* NSLocking+Do.swift in Sources */,
+				3FABEBAB22DC7EB70057C967 /* PersonViewController.swift in Sources */,
 				3F07DDA4228184A3007E831A /* DispatchTime+After.swift in Sources */,
 				3F07DDA5228184A3007E831A /* BinaryInteger+ToDouble.swift in Sources */,
 				3F07DD5E22805B01007E831A /* Video.swift in Sources */,
 				3FE1EF5D22CA12CE00F999C0 /* ViewModel.swift in Sources */,
 				3F07DDA9228184A3007E831A /* PerformOnThread.swift in Sources */,
 				3F07DD6222806728007E831A /* Channel.swift in Sources */,
+				3FABEBA722DC7E660057C967 /* HomePresentationModel.swift in Sources */,
 				3F865769223BAC660050232D /* AppDelegate.swift in Sources */,
 				3FE1EF5522C6247700F999C0 /* PresentationModel.swift in Sources */,
 				3F07DDB2228185FB007E831A /* ParserJSONYoutubeAPI.swift in Sources */,

@@ -29,7 +29,7 @@ class SettingsLauncherCell: BaseCell {
             return image
     }()
     
-    public var setingsState: ModelSettingsLauncherState?
+    public var settingsState: ModelSettingsLauncherState?
 
     override var isHighlighted: Bool {
         didSet {
@@ -60,5 +60,26 @@ class SettingsLauncherCell: BaseCell {
         setting.settingModel.do {
             self.settingImage.image = UIImage(named: $0.imageName)
         }
+        self.settingsState = setting
+        
+        
+        (self.settingsState?.state).do {
+            switch $0 {
+            case .settings:
+                break
+            case .help:
+                break
+            default:
+                break 
+            }
+        }
+
     }
 }
+
+//
+//settings
+//help
+//cancel
+//feedback
+//switch_account

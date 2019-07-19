@@ -13,7 +13,9 @@ enum HomeEvents {
     case presentSettings(SettingsLauncherViewController)
     case presentSearch
 }
+
 class BaseViewModel: ViewModel<HomeEvents>  {
+    
     var moreButton: UIBarButtonItem?
     var searchBarButtonItem: UIBarButtonItem?
     
@@ -36,6 +38,9 @@ class BaseViewModel: ViewModel<HomeEvents>  {
     }
     
     @objc func handlerMore() {
+//        let settingsAppCoordinator = SettingsAppCoordinator()
+//        settingsAppCoordinator.start()
+        
         let settingsViewController = SettingsLauncherViewController()
         settingsViewController.modalPresentationStyle = .overCurrentContext
         settingsViewController.modalTransitionStyle = .crossDissolve

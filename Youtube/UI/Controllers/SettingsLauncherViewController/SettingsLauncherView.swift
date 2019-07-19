@@ -46,7 +46,7 @@ class  ModelSettingsLauncherState {
     //MARK: -
     //MARK: Variables
     
-    var state: EventMenuState
+    public var state: EventMenuState
     var settingModel: SettingModel?
     
     //MARK: -
@@ -80,13 +80,13 @@ class SettingsLauncherView: UIView, UIGestureRecognizerDelegate {
     
     var settingsViewEventHandler: ((EventMenuState) -> ())?
     
-    lazy fileprivate var collectionViewSettingsMenu = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    lazy fileprivate var tapInterceptView: UITapGestureRecognizer = {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_:)))
-        tap.delegate = self
-        
-        return tap
-    }()
+    lazy fileprivate var collectionViewSettingsMenu = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+//    lazy fileprivate var tapInterceptView: UITapGestureRecognizer = {
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_:)))
+//        tap.delegate = self
+//        
+//        return tap
+//    }()
 
     //MARK: -
     //MARK: Initializations 
@@ -98,10 +98,6 @@ class SettingsLauncherView: UIView, UIGestureRecognizerDelegate {
         [.cancel, .help, .feedback, .switch_account, .settings].forEach {
             self.states.append(.init(state: $0))
         }
-        
-        collectionViewSettingsMenu.delegate = self
-        collectionViewSettingsMenu.dataSource = self
-        collectionViewSettingsMenu.register(SettingsLauncherCell.self, forCellWithReuseIdentifier: "cellId")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -142,19 +138,21 @@ class SettingsLauncherView: UIView, UIGestureRecognizerDelegate {
     }
     
     @objc internal func tap(_ sender: UITapGestureRecognizer?) {
-
+        print("aa")
     }
 
     // MARK:
     // MARK:  Private
     
     private func setupSubviews() {
-        self.addGestureRecognizer(tapInterceptView)
+        self.collectionViewSettingsMenu.delegate = self
+        self.collectionViewSettingsMenu.dataSource = self
+        self.collectionViewSettingsMenu.register(SettingsLauncherCell.self, forCellWithReuseIdentifier: String(describing: SettingsLauncherCell.self))
+//        self.addGestureRecognizer(tapInterceptView)
         self.addSubview(collectionViewSettingsMenu)
-        self.addGestureRecognizer(tapInterceptView)
+//        self.addGestureRecognizer(tapInterceptView)
     }
 }
-
 
 // MARK:
 // MARK: UICollectionViewDelegate & UICollectionViewDataSource
@@ -165,14 +163,14 @@ extension SettingsLauncherView: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)) ?? SettingsLauncherCell()
+        let cell = cast(collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SettingsLauncherCell.self), for: indexPath)) ?? SettingsLauncherCell()
         let settings = self.states[indexPath.row]
         cell.fill(setting: settings)
     
         return cell
-    }   
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }  
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let state = self.states[indexPath.row].state
         self.settingsViewEventHandler?(state)
     }

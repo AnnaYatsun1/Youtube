@@ -31,16 +31,16 @@ class  SettingsLauncherViewController: UIViewController {
     }
     
     private func prepareSettingsEventsHandler() {
-        self.settingsMenuView.settingsViewEventHandler = { [weak self] event in
-            switch event {
-            case .settings: 
-                self?.moveToHelpController(viewController: SettingsViewController())
-            case .help:
-                self?.moveToHelpController(viewController: HelpViewController())
-            default:
-                break
-            }
-        }
+//        self.settingsMenuView.settingsViewEventHandler = { [weak self] event in
+//            switch event {
+//            case .settings: 
+//                self?.moveToHelpController(viewController: SettingsViewController())
+//            case .help:
+//                self?.moveToHelpController(viewController: HelpViewController())
+//            default:
+//                break
+//            }
+//        }
     }
   
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil) { // onTap не понятное название

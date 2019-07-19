@@ -79,10 +79,6 @@ class MenuBarView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-
-    
-    
-    
     private func setupHorizontalBar() {
         self.horizontalView.backgroundColor = UIColor.white
         self.addSubview(self.horizontalView)
@@ -130,14 +126,14 @@ extension MenuBarView: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         _ collectionView: UICollectionView, 
         layout collectionViewLayout: UICollectionViewLayout,
         minimumInteritemSpacingForSectionAt section: Int
-        )
+    )
         -> CGFloat 
     {
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.75){            
+        UIView.animate(withDuration: 0.75) {            
             if let currentState = State(rawValue: indexPath.row) {
                 self.viewModel?.handler?(currentState)
             }

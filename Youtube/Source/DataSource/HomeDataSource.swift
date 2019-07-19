@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 
+
+
 class HomeDataSource: NSObject {
     
     var viewModel: HomePresentationModel?
@@ -26,7 +28,7 @@ class HomeDataSource: NSObject {
 extension HomeDataSource: UICollectionViewDataSource {
     
     public func count() -> Int {
-        return self.viewModel?.menuBar.cellsCount ?? 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
